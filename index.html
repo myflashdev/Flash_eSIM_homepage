@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>閃電通 eSIM - 全球無縫連網專家</title>
+
+  <!-- Iconoir Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" />
+
+  <!-- 改用 Google Fonts CDN 或本地字體 -->
+  <link href="https://font.emtech.cc/css/:font:" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- swiper.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+        /* Primary Colors - v2 芒果色系 */
+        --color-mango-orange: #fb8e30;
+        --color-mango-orange-80: #fca559;
+        --color-mango-orange-60: #fdbb83;
+        --color-mango-orange-40: #fdd2ac;
+        --color-mango-orange-20: #fee8d6;
+        --color-safe-black: #404040;
+
+        /* Secondary Colors */
+        --color-mango-yellow: #ffbe40;
+        --color-warm-white: #fff8ee;
+        --color-soft-amber: #fff1db;
+
+        /* Accent Colors */
+        --color-sky-blue: #6bc7e6;
+        --color-mint-green: #6fe3b0;
+
+        /* 文字顏色 */
+        --color-primary-text: #2f2f2f;
+        --color-secondary-text: #595959;
+
+        /* 字體 - 符合 Tailwind v4 規範 */
+        --font-flash: "Rubik", "Noto Sans TC", sans-serif;
+      }
+    </style>
+
+  <style>
+    /* 補充 CSS Variables 以供 Swiper 等第三方庫使用 */
+    :root {
+      --color-mango-orange: #fb8e30;
+      --color-mango-orange-80: #fca559;
+      --color-mango-orange-60: #fdbb83;
+      --color-mango-orange-40: #fdd2ac;
+      --color-mango-orange-20: #fee8d6;
+      --color-safe-black: #404040;
+      --color-mango-yellow: #ffbe40;
+      --color-warm-white: #fff8ee;
+      --color-soft-amber: #fff1db;
+      --color-sky-blue: #6bc7e6;
+      --color-mint-green: #6fe3b0;
+      --color-primary-text: #2f2f2f;
+      --color-secondary-text: #595959;
+    }
+
+    body {
+      height: 100dvh;
+    }
+
+    @layer utilities {
+
+      /* Glassmorphism effect */
+      .glass {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      /* Gradient backgrounds - v2 芒果漸層 */
+      .gradient-mango {
+        background: linear-gradient(135deg, #ffbe40 0%, #fb8e30 100%);
+      }
+
+      /* 水平漸層 (用於裝飾線) */
+      .gradient-mango-horizontal {
+        background: linear-gradient(90deg, #ffbe40 0%, #fb8e30 100%);
+      }
+
+      /* 雙層遮罩效果 */
+      .overlay-mango-gradient {
+        background: linear-gradient(135deg, #ffbe40 0%, #fb8e30 100%);
+        opacity: 0.7;
+      }
+
+      .overlay-safe-black {
+        background: var(--color-safe-black);
+        opacity: 0.5;
+      }
+
+      /* 文字漸層效果 */
+      .text-gradient-mango {
+        background: linear-gradient(135deg, #ffbe40 0%, #fb8e30 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Button glow effect */
+      .btn-glow {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .btn-glow::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.5),
+            transparent);
+        transition: left 0.5s ease;
+      }
+
+      .btn-glow:hover::before {
+        left: 100%;
+      }
+
+      /* Icon styles */
+      .iconoir {
+        font-size: 2.5rem;
+        line-height: 1;
+      }
+
+      /* Icon gradient effect for Iconoir (uses mask-image) */
+      .icon-gradient::before {
+        background: linear-gradient(135deg,
+            #ffbe40 0%,
+            #fb8e30 100%) !important;
+      }
+    }
+
+    /* Floating animation */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Swiper custom styles */
+    .useCasesSwiper,
+    .testimonialsSwiper {
+      padding-bottom: 70px;
+    }
+
+    .useCasesSwiper .swiper-button-next,
+    .useCasesSwiper .swiper-button-prev,
+    .testimonialsSwiper .swiper-button-next,
+    .testimonialsSwiper .swiper-button-prev {
+      color: var(--color-mango-orange-80);
+    }
+
+    .useCasesSwiper .swiper-pagination-bullet,
+    .testimonialsSwiper .swiper-pagination-bullet {
+      background: var(--color-mango-orange-60);
+    }
+
+    .useCasesSwiper .swiper-pagination-bullet-active,
+    .testimonialsSwiper .swiper-pagination-bullet-active {
+      background: var(--color-mango-orange-80);
+    }
+  </style>
+</head>
+
+<body class="m-0 p-0 box-border font-flash leading-relaxed text-gray-100 bg-white">
+  <!-- Header - v2 簡化版 -->
+  <header class="bg-white/90 backdrop-blur-sm shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 py-4 flex justify-center items-center">
+      <!-- Logo -->
+      <a href="#" class="block">
+        <svg class="h-10 w-auto p-1" viewBox="733 1040 6352 1820" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M4195 1430.07C4211.57 1430.07 4225 1443.5 4225 1460.07V1595.07C4225 1611.64 4211.57 1625.07 4195 1625.07H3735C3718.43 1625.07 3705 1638.5 3705 1655.07V1855C3705 1871.57 3718.43 1885 3735 1885H4130C4146.57 1885 4160 1898.43 4160 1915V2050C4160 2066.57 4146.57 2080 4130 2080H3735C3718.43 2080 3705 2093.43 3705 2110V2440.07C3705 2456.64 3691.57 2470.07 3675 2470.07H3540C3523.43 2470.07 3510 2456.64 3510 2440.07V1460.07C3510 1443.5 3523.43 1430.07 3540 1430.07H4195Z"
+            fill="#404040" />
+          <path
+            d="M4520 1430.07C4536.57 1430.07 4550 1443.5 4550 1460.07V2440.07C4550 2456.64 4536.57 2470.07 4520 2470.07H4385C4368.43 2470.07 4355 2456.64 4355 2440.07L4355 1460.07C4355 1443.5 4368.43 1430.07 4385 1430.07L4520 1430.07Z"
+            fill="#404040" />
+          <path
+            d="M6210 1690.07C6226.57 1690.07 6240 1703.5 6240 1720.07V1855.07C6240 1871.64 6226.57 1885.07 6210 1885.07H5890.33C5860.22 1885.07 5848.88 1924.47 5874.38 1940.48L6136.45 2104.98C6198.26 2138.14 6240.15 2202.32 6240.15 2276.07C6240.15 2382.32 6153.19 2467.73 6045 2470.07H5621C5604.43 2470.07 5590 2456.64 5590 2440.07V2305.07C5590 2288.5 5604.43 2275.07 5621 2275.07H5936.51C5966.62 2275.07 5977.96 2235.67 5952.45 2219.66L5684.44 2051.47C5626.49 2016.76 5590 1952.97 5590 1885.07C5590 1784.38 5675.84 1690.07 5779 1690.07H6210Z"
+            fill="#404040" />
+          <path
+            d="M6535 1430C6551.57 1430 6565 1443.43 6565 1460V1660C6565 1676.57 6578.43 1690 6595 1690C6693.37 1690 6791.74 1690 6890.11 1690C6995.93 1690 7082.05 1776.33 7084.93 1883.94C7084.97 1884.62 7085 1885.31 7085 1886V2440C7085 2456.57 7071.57 2470 7055 2470H6920C6903.43 2470 6890 2456.57 6890 2440C6890 2265.2 6890.02 2092.03 6890.02 1915C6890.02 1898.43 6876.59 1885 6860.02 1885H6595C6578.43 1885 6565 1898.43 6565 1915V2440C6565 2456.57 6551.57 2470 6535 2470H6400C6383.43 2470 6370 2456.57 6370 2440V1460C6370 1443.43 6383.43 1430 6400 1430H6535Z"
+            fill="#404040" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M5080 1690C5300.36 1690 5479 1864.61 5479 2080C5479 2200.02 5479 2320.05 5479 2440.07C5479 2456.64 5465.57 2470.07 5449 2470.07H5314C5297.43 2470.07 5284 2456.64 5284 2440.07C5284 2429.06 5272.01 2422.12 5262.17 2427.07C5207.56 2454.51 5145.63 2470 5080 2470C4859.64 2470 4681 2295.39 4681 2080C4681 1864.61 4859.64 1690 5080 1690ZM5080 1885C4972.3 1885 4885 1972.3 4885 2080C4885 2187.7 4972.3 2275 5080 2275C5187.7 2275 5275 2187.7 5275 2080C5275 1972.3 5187.7 1885 5080 1885Z"
+            fill="#404040" />
+          <path
+            d="M957.085 1874.16C950.363 1900.49 946.112 1928.04 946.111 1956.4C946.112 2141.05 1105.53 2291.25 1289.44 2291.25H1458.36C1463.73 2291.3 1468.18 2291.26 1471.59 2291.25C1615.25 2291.25 1758.91 2291.3 1902.58 2291.32C1929.44 2291.32 1951.45 2312.09 1953.46 2338.46C1953.55 2339.75 1953.61 2341.06 1953.61 2342.38V2808.51C1953.6 2836.71 1930.76 2860 1902.57 2860C1792.72 2860 1130.83 2860 1074.59 2860C891.11 2856.24 733 2707.24 733 2520.58C733 2487.25 745.733 2427.22 767.1 2375.25L957.085 1874.16Z"
+            fill="#FFBE40" />
+          <path
+            d="M1470.9 2291.25C1435.17 2291.25 1415.4 2260 1428.12 2226.57L1859.17 1087.73C1869.2 1061.37 1853.01 1040 1824.83 1040H1324.73C1296.55 1040 1265.02 1061.77 1254.99 1088.13L957.085 1874.16C950.359 1900.49 946.112 1928.03 946.111 1956.4C946.112 2141.05 1104.85 2291.25 1288.75 2291.25C1349.47 2291.25 1410.19 2291.45 1470.9 2291.25Z"
+            fill="url(#paint0_linear_159_296)" />
+          <path
+            d="M2895.91 2025.84C2902.64 1999.51 2906.21 1971.96 2906.21 1943.6C2906.21 1758.95 2747.47 1608.75 2563.56 1608.75H2394.64C2389.27 1608.7 2384.82 1608.74 2381.41 1608.75C2237.75 1608.75 2094.09 1608.7 1950.42 1608.68C1923.56 1608.68 1901.55 1587.91 1899.54 1561.54C1899.45 1560.25 1899.39 1558.94 1899.39 1557.62V1091.49C1899.4 1063.29 1922.24 1040 1950.43 1040C2060.28 1040 2722.17 1040 2778.41 1040C2961.89 1043.76 3120 1192.76 3120 1379.42C3120 1412.75 3107.27 1472.78 3085.9 1524.75L2895.91 2025.84Z"
+            fill="#FFBE40" />
+          <path
+            d="M2395.33 1608.75C2389.95 1608.7 2385.5 1608.74 2382.1 1608.75C2417.83 1608.75 2437.6 1640 2424.88 1673.43L1993.83 2812.27C1983.8 2838.63 1999.99 2860 2028.17 2860H2528.27C2556.45 2860 2587.98 2838.23 2598.01 2811.87L2895.91 2025.84C2902.64 1999.5 2906.21 1972.16 2906.21 1943.78C2906.21 1759.13 2748.15 1608.75 2564.25 1608.75H2395.33Z"
+            fill="url(#paint1_linear_159_296)" />
+          <defs>
+            <linearGradient id="paint0_linear_159_296" x1="1924.5" y1="1540.88" x2="1996.64" y2="2382.31"
+              gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFBE40" />
+              <stop offset="1" stop-color="#FB8E30" />
+            </linearGradient>
+            <linearGradient id="paint1_linear_159_296" x1="2510.72" y1="2359.12" x2="2372.49" y2="1534.68"
+              gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFBE40" />
+              <stop offset="1" stop-color="#FB8E30" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 底部裝飾線 10px 漸層左至右 -->
+    <div class="h-[10px] w-full gradient-mango-horizontal"></div>
+
+    <!-- Hero Section - v2 -->
+    <section class="text-white py-24 text-center relative overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&q=80" alt="Travel background"
+          class="w-full h-full object-cover" />
+        <!-- 雙層遮罩 -->
+        <div class="absolute inset-0 overlay-mango-gradient"></div>
+        <div class="absolute inset-0 overlay-safe-black"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-5 relative z-10">
+        <div class="flex justify-center mb-6">
+          <i class="iconoir-planet float-animation icon-gradient" style="font-size: 4rem"></i>
+        </div>
+
+        <h1 class="text-5xl mb-6 font-flash font-bold">
+          隨時連上世界，讓旅程暢行無阻
+        </h1>
+
+        <p class="text-xl mb-10 text-white/90 font-medium max-w-3xl mx-auto">
+          專為國際旅人、數位遊牧者與商務人士<br />打開新頁、高效、智能的行動數據新體驗
+        </p>
+        <button disabled
+          class="inline-block bg-mango-orange-60 text-white px-8 py-4 rounded-full font-bold text-lg cursor-not-allowed">
+          即將推出
+        </button>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 text-center bg-warm-white">
+      <div class="max-w-7xl mx-auto px-5">
+        <h2 class="text-4xl mb-5 font-flash font-bold text-primary-text">
+          3 大核心優勢
+        </h2>
+        <p class="text-lg font-medium text-secondary-text mb-12">
+          讓你在每個角落都能保持連線
+        </p>
+        <div class="flex justify-center flex-wrap gap-8 md:gap-x-[4%] md:gap-y-8 mt-12">
+          <div
+            class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 max-w-xs md:max-w-none md:w-[30%] xl:w-[30%] text-center hover:scale-105 border border-gray-100">
+            <div class="flex justify-center mb-5">
+              <i class="iconoir-globe icon-gradient" style="font-size: 3.5rem"></i>
+            </div>
+
+            <h3 class="text-2xl mb-4 font-flash font-semibold text-primary-text">
+              亞洲 eSIM 方案
+            </h3>
+
+            <p class="text-secondary-text font-medium leading-relaxed">
+              日韓泰隨買隨用<br>
+              跟換卡針說掰掰
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 max-w-xs md:max-w-none md:w-[30%] xl:w-[30%] text-center hover:scale-105 border border-gray-100">
+            <div class="flex justify-center mb-5">
+              <i class="iconoir-dashboard-speed icon-gradient" style="font-size: 3.5rem"></i>
+            </div>
+            <h3 class="text-2xl mb-4 font-flash font-semibold text-primary-text">
+              專屬 APP 服務
+            </h3>
+            <p class="text-secondary-text font-medium leading-relaxed">
+              流量剩多少<br>
+              打開 APP 看一眼就知道
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 max-w-xs md:max-w-none md:w-[30%] xl:w-[30%] text-center hover:scale-105 border border-gray-100">
+            <div class="flex justify-center mb-5">
+              <i class="iconoir-antenna-signal icon-gradient" style="font-size: 3.5rem"></i>
+            </div>
+            <h3 class="text-2xl mb-4 font-flash font-semibold text-primary-text">
+              網速穩又快
+            </h3>
+            <p class="text-secondary-text font-medium leading-relaxed">
+              優良使用體驗<br>
+              出國玩不怕網路卡卡
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="bg-white py-20 text-center relative overflow-hidden">
+      <h2 class="text-4xl mb-5 font-flash font-bold text-primary-text">
+        適用於各種旅程
+      </h2>
+
+      <p class="text-lg text-secondary-text font-medium mb-12">
+        無論你去哪裡,我們都與你同行
+      </p>
+
+      <!-- Swiper Container -->
+      <div class="swiper useCasesSwiper max-w-4xl mx-auto">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 - 商務出差 -->
+          <div class="swiper-slide">
+            <div class="bg-midnight-blue rounded-3xl shadow-lg overflow-hidden border border-mist-gray/20">
+              <div
+                class="relative h-64 bg-gradient-to-br from-midnight-blue to-midnight-black flex items-center justify-center">
+                <img src="https://picsum.photos/1200/600?business" class="h-full w-full object-cover" />
+              </div>
+
+              <div class="p-8 text-left bg-warm-white">
+                <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
+                  商務出差
+                </h3>
+
+                <p class="text-secondary-text font-medium leading-relaxed">
+                  無論是跨國會議或遠端辦公,確保你隨時保持高速連線,不錯過任何重要資訊
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 - 自由行旅客 -->
+          <div class="swiper-slide">
+            <div class="bg-midnight-blue rounded-3xl shadow-lg overflow-hidden border border-mist-gray/20">
+              <div
+                class="relative h-64 bg-gradient-to-br from-deep-orange to-lightning-gold flex items-center justify-center">
+                <img src="https://picsum.photos/1200/600?travel" class="h-full w-full object-cover" />
+              </div>
+
+              <div class="p-8 text-left bg-warm-white">
+                <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
+                  自由行旅客
+                </h3>
+
+                <p class="text-secondary-text font-medium leading-relaxed">
+                  輕鬆分享旅途點滴,使用地圖導航,不再為尋找 Wi-Fi
+                  而煩惱,讓旅行更自由
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 - 數位遊牧者 -->
+          <div class="swiper-slide">
+            <div class="bg-midnight-blue rounded-3xl shadow-lg overflow-hidden border border-mist-gray/20">
+              <div class="relative h-64 bg-gradient-to-br from-purple-600 to-blue-500 flex items-center justify-center">
+                <img src="https://picsum.photos/1200/600?nomad" class="h-full w-full object-cover" />
+              </div>
+
+              <div class="p-8 text-left bg-warm-white">
+                <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
+                  數位遊牧者
+                </h3>
+
+                <p class="text-secondary-text font-medium leading-relaxed">
+                  在世界各地工作與生活,隨時隨地保持穩定網路連線,實現真正的遠距工作自由
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 - 留學生 -->
+          <div class="swiper-slide">
+            <div class="bg-midnight-blue rounded-3xl shadow-lg overflow-hidden border border-mist-gray/20">
+              <div class="relative h-64 bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center">
+                <img src="https://picsum.photos/1200/600?student" class="h-full w-full object-cover" />
+              </div>
+
+              <div class="p-8 text-left bg-warm-white">
+                <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
+                  國際留學生
+                </h3>
+
+                <p class="text-secondary-text font-medium leading-relaxed">
+                  抵達異國第一時間就能上網,與家人聯繫報平安,快速適應新環境的學習生活
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 - 家庭旅遊 -->
+          <div class="swiper-slide">
+            <div class="bg-midnight-blue rounded-3xl shadow-lg overflow-hidden border border-mist-gray/20">
+              <div class="relative h-64 bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center">
+                <img src="https://picsum.photos/1200/600?family" class="h-full w-full object-cover" />
+              </div>
+
+              <div class="p-8 text-left bg-warm-white">
+                <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
+                  家庭旅遊
+                </h3>
+
+                <p class="text-secondary-text font-medium leading-relaxed">
+                  全家出遊不必擔心網路問題,隨時查詢景點資訊、餐廳推薦,留下美好回憶
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 6 - 探險家 -->
+          <div class="swiper-slide">
+            <div class="bg-midnight-blue rounded-3xl shadow-lg overflow-hidden border border-mist-gray/20">
+              <div
+                class="relative h-64 bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center">
+                <img src="https://picsum.photos/1200/600?adventure" class="h-full w-full object-cover" />
+              </div>
+
+              <div class="p-8 text-left bg-warm-white">
+                <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
+                  冒險探險家
+                </h3>
+
+                <p class="text-secondary-text font-medium leading-relaxed">
+                  深入偏遠地區探索未知世界,仍能保持通訊暢通,確保安全與緊急聯繫
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <!-- Pagination -->
+        <div class="swiper-pagination !bottom-0"></div>
+      </div>
+    </section>
+
+    <!-- CTA Section - v2 -->
+    <section class="text-white py-24 text-center relative overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920&q=80" alt="CTA background"
+          class="w-full h-full object-cover" />
+        <!-- 雙層遮罩 -->
+        <div class="absolute inset-0 overlay-mango-gradient"></div>
+        <div class="absolute inset-0 overlay-safe-black"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-5 relative z-10">
+        <div class="flex justify-center mb-6">
+          <i class="iconoir-rocket float-animation icon-gradient" style="font-size: 4rem"></i>
+        </div>
+
+        <h2 class="text-5xl mb-6 font-flash font-bold">
+          立即體驗未來連網方式
+        </h2>
+
+        <p class="text-xl font-medium mb-10 text-white/90 max-w-3xl mx-auto">
+          選擇你的目的地，輕鬆啟動 eSIM，讓每一次旅程都暢行無阻
+        </p>
+
+        <button disabled
+          class="inline-block bg-mango-orange-60 text-white px-8 py-4 rounded-full font-bold text-lg cursor-not-allowed">
+          即將推出
+        </button>
+      </div>
+    </section>
+  </main>
+  <!-- Footer - v2 簡化版 -->
+  <footer class="bg-warm-white py-12 text-center">
+    <div class="flex justify-center items-center">
+      <!-- Logo -->
+      <a href="#" class="block mb-8">
+        <svg class="h-10 w-auto p-1" viewBox="733 1040 6352 1820" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M4195 1430.07C4211.57 1430.07 4225 1443.5 4225 1460.07V1595.07C4225 1611.64 4211.57 1625.07 4195 1625.07H3735C3718.43 1625.07 3705 1638.5 3705 1655.07V1855C3705 1871.57 3718.43 1885 3735 1885H4130C4146.57 1885 4160 1898.43 4160 1915V2050C4160 2066.57 4146.57 2080 4130 2080H3735C3718.43 2080 3705 2093.43 3705 2110V2440.07C3705 2456.64 3691.57 2470.07 3675 2470.07H3540C3523.43 2470.07 3510 2456.64 3510 2440.07V1460.07C3510 1443.5 3523.43 1430.07 3540 1430.07H4195Z"
+            fill="#404040" />
+          <path
+            d="M4520 1430.07C4536.57 1430.07 4550 1443.5 4550 1460.07V2440.07C4550 2456.64 4536.57 2470.07 4520 2470.07H4385C4368.43 2470.07 4355 2456.64 4355 2440.07L4355 1460.07C4355 1443.5 4368.43 1430.07 4385 1430.07L4520 1430.07Z"
+            fill="#404040" />
+          <path
+            d="M6210 1690.07C6226.57 1690.07 6240 1703.5 6240 1720.07V1855.07C6240 1871.64 6226.57 1885.07 6210 1885.07H5890.33C5860.22 1885.07 5848.88 1924.47 5874.38 1940.48L6136.45 2104.98C6198.26 2138.14 6240.15 2202.32 6240.15 2276.07C6240.15 2382.32 6153.19 2467.73 6045 2470.07H5621C5604.43 2470.07 5590 2456.64 5590 2440.07V2305.07C5590 2288.5 5604.43 2275.07 5621 2275.07H5936.51C5966.62 2275.07 5977.96 2235.67 5952.45 2219.66L5684.44 2051.47C5626.49 2016.76 5590 1952.97 5590 1885.07C5590 1784.38 5675.84 1690.07 5779 1690.07H6210Z"
+            fill="#404040" />
+          <path
+            d="M6535 1430C6551.57 1430 6565 1443.43 6565 1460V1660C6565 1676.57 6578.43 1690 6595 1690C6693.37 1690 6791.74 1690 6890.11 1690C6995.93 1690 7082.05 1776.33 7084.93 1883.94C7084.97 1884.62 7085 1885.31 7085 1886V2440C7085 2456.57 7071.57 2470 7055 2470H6920C6903.43 2470 6890 2456.57 6890 2440C6890 2265.2 6890.02 2092.03 6890.02 1915C6890.02 1898.43 6876.59 1885 6860.02 1885H6595C6578.43 1885 6565 1898.43 6565 1915V2440C6565 2456.57 6551.57 2470 6535 2470H6400C6383.43 2470 6370 2456.57 6370 2440V1460C6370 1443.43 6383.43 1430 6400 1430H6535Z"
+            fill="#404040" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M5080 1690C5300.36 1690 5479 1864.61 5479 2080C5479 2200.02 5479 2320.05 5479 2440.07C5479 2456.64 5465.57 2470.07 5449 2470.07H5314C5297.43 2470.07 5284 2456.64 5284 2440.07C5284 2429.06 5272.01 2422.12 5262.17 2427.07C5207.56 2454.51 5145.63 2470 5080 2470C4859.64 2470 4681 2295.39 4681 2080C4681 1864.61 4859.64 1690 5080 1690ZM5080 1885C4972.3 1885 4885 1972.3 4885 2080C4885 2187.7 4972.3 2275 5080 2275C5187.7 2275 5275 2187.7 5275 2080C5275 1972.3 5187.7 1885 5080 1885Z"
+            fill="#404040" />
+          <path
+            d="M957.085 1874.16C950.363 1900.49 946.112 1928.04 946.111 1956.4C946.112 2141.05 1105.53 2291.25 1289.44 2291.25H1458.36C1463.73 2291.3 1468.18 2291.26 1471.59 2291.25C1615.25 2291.25 1758.91 2291.3 1902.58 2291.32C1929.44 2291.32 1951.45 2312.09 1953.46 2338.46C1953.55 2339.75 1953.61 2341.06 1953.61 2342.38V2808.51C1953.6 2836.71 1930.76 2860 1902.57 2860C1792.72 2860 1130.83 2860 1074.59 2860C891.11 2856.24 733 2707.24 733 2520.58C733 2487.25 745.733 2427.22 767.1 2375.25L957.085 1874.16Z"
+            fill="#FFBE40" />
+          <path
+            d="M1470.9 2291.25C1435.17 2291.25 1415.4 2260 1428.12 2226.57L1859.17 1087.73C1869.2 1061.37 1853.01 1040 1824.83 1040H1324.73C1296.55 1040 1265.02 1061.77 1254.99 1088.13L957.085 1874.16C950.359 1900.49 946.112 1928.03 946.111 1956.4C946.112 2141.05 1104.85 2291.25 1288.75 2291.25C1349.47 2291.25 1410.19 2291.45 1470.9 2291.25Z"
+            fill="url(#paint0_linear_159_296)" />
+          <path
+            d="M2895.91 2025.84C2902.64 1999.51 2906.21 1971.96 2906.21 1943.6C2906.21 1758.95 2747.47 1608.75 2563.56 1608.75H2394.64C2389.27 1608.7 2384.82 1608.74 2381.41 1608.75C2237.75 1608.75 2094.09 1608.7 1950.42 1608.68C1923.56 1608.68 1901.55 1587.91 1899.54 1561.54C1899.45 1560.25 1899.39 1558.94 1899.39 1557.62V1091.49C1899.4 1063.29 1922.24 1040 1950.43 1040C2060.28 1040 2722.17 1040 2778.41 1040C2961.89 1043.76 3120 1192.76 3120 1379.42C3120 1412.75 3107.27 1472.78 3085.9 1524.75L2895.91 2025.84Z"
+            fill="#FFBE40" />
+          <path
+            d="M2395.33 1608.75C2389.95 1608.7 2385.5 1608.74 2382.1 1608.75C2417.83 1608.75 2437.6 1640 2424.88 1673.43L1993.83 2812.27C1983.8 2838.63 1999.99 2860 2028.17 2860H2528.27C2556.45 2860 2587.98 2838.23 2598.01 2811.87L2895.91 2025.84C2902.64 1999.5 2906.21 1972.16 2906.21 1943.78C2906.21 1759.13 2748.15 1608.75 2564.25 1608.75H2395.33Z"
+            fill="url(#paint1_linear_159_296)" />
+          <defs>
+            <linearGradient id="paint0_linear_159_296" x1="1924.5" y1="1540.88" x2="1996.64" y2="2382.31"
+              gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFBE40" />
+              <stop offset="1" stop-color="#FB8E30" />
+            </linearGradient>
+            <linearGradient id="paint1_linear_159_296" x1="2510.72" y1="2359.12" x2="2372.49" y2="1534.68"
+              gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFBE40" />
+              <stop offset="1" stop-color="#FB8E30" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </a>
+    </div>
+
+    <!-- 聯絡資訊 -->
+    <div class="flex flex-col md:flex-row justify-center items-center md:space-x-4 mb-5">
+      <div class="text-safe-black font-medium">
+        服務電話：02-23681888
+        <br />
+        服務信箱：official@flashtele.com
+      </div>
+    </div>
+
+    <!-- 版權聲明 -->
+    <p class="mt-8 text-safe-black/60">© 2026 閃電通。保留所有權利。</p>
+    </div>
+  </footer>
+  <!-- 底部裝飾線 10px 漸層左至右 -->
+  <div class="h-[10px] w-full gradient-mango-horizontal"></div>
+
+  <!-- Swiper JS Initialization - v2 -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Initialize Use Cases Swiper
+      const useCasesSwiper = new Swiper(".useCasesSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".useCasesSwiper .swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".useCasesSwiper .swiper-button-next",
+          prevEl: ".useCasesSwiper .swiper-button-prev",
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+        },
+      });
+    });
+  </script>
+</body>
+
+</html>
