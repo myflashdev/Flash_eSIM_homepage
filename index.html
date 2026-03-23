@@ -6,11 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>閃電通 eSIM - 購買方案</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/iconoir@6.11.0/css/iconoir.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
@@ -40,8 +42,13 @@
     }
 
     /* ── 漸層工具 ── */
-    .gradient-mango          { background: linear-gradient(135deg, #ffbe40 0%, #fb8e30 100%); }
-    .gradient-mango-horizontal { background: linear-gradient(90deg, #ffbe40 0%, #fb8e30 100%); }
+    .gradient-mango {
+      background: linear-gradient(135deg, #ffbe40 0%, #fb8e30 100%);
+    }
+
+    .gradient-mango-horizontal {
+      background: linear-gradient(90deg, #ffbe40 0%, #fb8e30 100%);
+    }
 
     .text-gradient-mango {
       background: linear-gradient(135deg, #ffbe40 0%, #fb8e30 100%);
@@ -51,8 +58,13 @@
     }
 
     /* ── 視圖切換 ── */
-    .view        { display: none; }
-    .view.active { display: block; }
+    .view {
+      display: none;
+    }
+
+    .view.active {
+      display: block;
+    }
 
     /* ── 國家卡片 ── */
     .country-card {
@@ -60,14 +72,24 @@
       border: 2px solid transparent;
       transition: all 0.2s ease;
     }
+
     .country-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(251,142,48,0.18);
+      box-shadow: 0 12px 32px rgba(251, 142, 48, 0.18);
       border-color: #fdd2ac;
     }
-    .country-card:active { transform: translateY(-1px); }
-    .country-card .card-arrow     { transition: transform 0.2s ease; }
-    .country-card:hover .card-arrow { transform: translateX(3px); }
+
+    .country-card:active {
+      transform: translateY(-1px);
+    }
+
+    .country-card .card-arrow {
+      transition: transform 0.2s ease;
+    }
+
+    .country-card:hover .card-arrow {
+      transform: translateX(3px);
+    }
 
     /* ── 方案卡片 ── */
     .plan-card {
@@ -75,15 +97,20 @@
       border: 2px solid transparent;
       transition: all 0.2s ease;
     }
+
     .plan-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(251,142,48,0.15);
+      box-shadow: 0 8px 24px rgba(251, 142, 48, 0.15);
     }
-    .plan-card.recommended { border-color: #fdd2ac; }
+
+    .plan-card.recommended {
+      border-color: #fdd2ac;
+    }
+
     .plan-card.selected {
       border-color: #fb8e30;
       background: #fff8ee;
-      box-shadow: 0 4px 16px rgba(251,142,48,0.25);
+      box-shadow: 0 4px 16px rgba(251, 142, 48, 0.25);
     }
 
     /* ── 無限流量卡片 ── */
@@ -92,10 +119,11 @@
       cursor: pointer;
       transition: all 0.2s ease;
     }
+
     .unlimited-card.selected {
       border-color: #fb8e30;
       background: #fff8ee;
-      box-shadow: 0 4px 16px rgba(251,142,48,0.25);
+      box-shadow: 0 4px 16px rgba(251, 142, 48, 0.25);
     }
 
     /* ── 天數 Tab ── */
@@ -105,18 +133,63 @@
       white-space: nowrap;
       transition: all 0.2s ease;
     }
-    .dur-tab:hover  { border-color: #fca559; background: #fff8ee; }
-    .dur-tab.active { border-color: #fb8e30; background: #fff8ee; color: #fb8e30; }
+
+    .dur-tab:hover {
+      border-color: #fca559;
+      background: #fff8ee;
+    }
+
+    .dur-tab.active {
+      border-color: #fb8e30;
+      background: #fff8ee;
+      color: #fb8e30;
+    }
+
+    /* ── Checkbox 白色勾勾 ── */
+    input[type="checkbox"].accent-mango-orange {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 1rem;
+      height: 1rem;
+      border: 2px solid #d1d5db;
+      border-radius: 4px;
+      background: white;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      flex-shrink: 0;
+    }
+    input[type="checkbox"].accent-mango-orange:checked {
+      background: #fb8e30;
+      border-color: #fb8e30;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5 4L6 11.5 2.5 8'  stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 10px;
+    }
+
+    /* ── Checkout input 已填值顏色 ── */
+    #co-carrier:not(:placeholder-shown),
+    #co-tax-id:not(:placeholder-shown),
+    #co-buyer-email:not(:placeholder-shown),
+    #co-buyer-phone:not(:placeholder-shown) {
+      color: #fb8e30;
+    }
 
     .dur-tabs-scroll {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
     }
-    .dur-tabs-scroll::-webkit-scrollbar { display: none; }
+
+    .dur-tabs-scroll::-webkit-scrollbar {
+      display: none;
+    }
 
     /* ── 結帳列 ── */
-    #checkout-bar { transition: transform 0.3s ease, opacity 0.3s ease; }
+    #checkout-bar {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
     #checkout-bar.hidden-bar {
       transform: translateY(100%);
       opacity: 0;
@@ -145,65 +218,124 @@
       padding: 2px 8px;
     }
 
-    .per-day-price { font-size: 11px; color: #9ca3af; }
+    .per-day-price {
+      font-size: 11px;
+      color: #9ca3af;
+    }
 
-    #bar-plan-detail { font-size: 11px; color: #595959; }
+    #bar-plan-detail {
+      font-size: 11px;
+      color: #595959;
+    }
 
-    #back-btn { cursor: pointer; transition: all 0.2s ease; }
-    #back-btn:hover { color: #fb8e30; }
+    #back-btn {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
 
-    input[type="date"] { color-scheme: light; }
+    #back-btn:hover {
+      color: #fb8e30;
+    }
+
+    input[type="date"] {
+      color-scheme: light;
+    }
 
     /* ── 從 a2e5847 補回的 CSS ── */
     .overlay-mango-gradient {
       background: linear-gradient(135deg, #ffbe40 0%, #fb8e30 100%);
       opacity: 0.7;
     }
+
     .overlay-safe-black {
       background: #404040;
       opacity: 0.5;
     }
+
     @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50%       { transform: translateY(-10px); }
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
-    .float-animation { animation: float 3s ease-in-out infinite; }
+
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
 
     .icon-gradient::before {
       background: linear-gradient(135deg, #ffbe40 0%, #fb8e30 100%) !important;
     }
 
     /* ── Swiper ── */
-    .useCasesSwiper { padding-bottom: 70px; }
+    .useCasesSwiper {
+      padding-bottom: 70px;
+    }
+
     .useCasesSwiper .swiper-button-next,
-    .useCasesSwiper .swiper-button-prev { color: #fca559; }
-    .useCasesSwiper .swiper-pagination-bullet { background: #fdbb83; }
-    .useCasesSwiper .swiper-pagination-bullet-active { background: #fca559; }
+    .useCasesSwiper .swiper-button-prev {
+      color: #fca559;
+    }
+
+    .useCasesSwiper .swiper-pagination-bullet {
+      background: #fdbb83;
+    }
+
+    .useCasesSwiper .swiper-pagination-bullet-active {
+      background: #fca559;
+    }
   </style>
 </head>
 
 <body class="m-0 p-0 box-border leading-relaxed text-gray-800 bg-gray-50">
-    
+
   <!-- Header -->
   <header class="bg-white/90 backdrop-blur-sm shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-5 py-4 flex justify-center items-center">
       <a href="#" class="block">
         <svg class="h-10 w-auto p-1" viewBox="733 1040 6352 1820" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4195 1430.07C4211.57 1430.07 4225 1443.5 4225 1460.07V1595.07C4225 1611.64 4211.57 1625.07 4195 1625.07H3735C3718.43 1625.07 3705 1638.5 3705 1655.07V1855C3705 1871.57 3718.43 1885 3735 1885H4130C4146.57 1885 4160 1898.43 4160 1915V2050C4160 2066.57 4146.57 2080 4130 2080H3735C3718.43 2080 3705 2093.43 3705 2110V2440.07C3705 2456.64 3691.57 2470.07 3675 2470.07H3540C3523.43 2470.07 3510 2456.64 3510 2440.07V1460.07C3510 1443.5 3523.43 1430.07 3540 1430.07H4195Z" fill="#404040"/>
-          <path d="M4520 1430.07C4536.57 1430.07 4550 1443.5 4550 1460.07V2440.07C4550 2456.64 4536.57 2470.07 4520 2470.07H4385C4368.43 2470.07 4355 2456.64 4355 2440.07L4355 1460.07C4355 1443.5 4368.43 1430.07 4385 1430.07L4520 1430.07Z" fill="#404040"/>
-          <path d="M6210 1690.07C6226.57 1690.07 6240 1703.5 6240 1720.07V1855.07C6240 1871.64 6226.57 1885.07 6210 1885.07H5890.33C5860.22 1885.07 5848.88 1924.47 5874.38 1940.48L6136.45 2104.98C6198.26 2138.14 6240.15 2202.32 6240.15 2276.07C6240.15 2382.32 6153.19 2467.73 6045 2470.07H5621C5604.43 2470.07 5590 2456.64 5590 2440.07V2305.07C5590 2288.5 5604.43 2275.07 5621 2275.07H5936.51C5966.62 2275.07 5977.96 2235.67 5952.45 2219.66L5684.44 2051.47C5626.49 2016.76 5590 1952.97 5590 1885.07C5590 1784.38 5675.84 1690.07 5779 1690.07H6210Z" fill="#404040"/>
-          <path d="M6535 1430C6551.57 1430 6565 1443.43 6565 1460V1660C6565 1676.57 6578.43 1690 6595 1690C6693.37 1690 6791.74 1690 6890.11 1690C6995.93 1690 7082.05 1776.33 7084.93 1883.94C7084.97 1884.62 7085 1885.31 7085 1886V2440C7085 2456.57 7071.57 2470 7055 2470H6920C6903.43 2470 6890 2456.57 6890 2440C6890 2265.2 6890.02 2092.03 6890.02 1915C6890.02 1898.43 6876.59 1885 6860.02 1885H6595C6578.43 1885 6565 1898.43 6565 1915V2440C6565 2456.57 6551.57 2470 6535 2470H6400C6383.43 2470 6370 2456.57 6370 2440V1460C6370 1443.43 6383.43 1430 6400 1430H6535Z" fill="#404040"/>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M5080 1690C5300.36 1690 5479 1864.61 5479 2080C5479 2200.02 5479 2320.05 5479 2440.07C5479 2456.64 5465.57 2470.07 5449 2470.07H5314C5297.43 2470.07 5284 2456.64 5284 2440.07C5284 2429.06 5272.01 2422.12 5262.17 2427.07C5207.56 2454.51 5145.63 2470 5080 2470C4859.64 2470 4681 2295.39 4681 2080C4681 1864.61 4859.64 1690 5080 1690ZM5080 1885C4972.3 1885 4885 1972.3 4885 2080C4885 2187.7 4972.3 2275 5080 2275C5187.7 2275 5275 2187.7 5275 2080C5275 1972.3 5187.7 1885 5080 1885Z" fill="#404040"/>
-          <path d="M957.085 1874.16C950.363 1900.49 946.112 1928.04 946.111 1956.4C946.112 2141.05 1105.53 2291.25 1289.44 2291.25H1458.36C1463.73 2291.3 1468.18 2291.26 1471.59 2291.25C1615.25 2291.25 1758.91 2291.3 1902.58 2291.32C1929.44 2291.32 1951.45 2312.09 1953.46 2338.46C1953.55 2339.75 1953.61 2341.06 1953.61 2342.38V2808.51C1953.6 2836.71 1930.76 2860 1902.57 2860C1792.72 2860 1130.83 2860 1074.59 2860C891.11 2856.24 733 2707.24 733 2520.58C733 2487.25 745.733 2427.22 767.1 2375.25L957.085 1874.16Z" fill="#FFBE40"/>
-          <path d="M1470.9 2291.25C1435.17 2291.25 1415.4 2260 1428.12 2226.57L1859.17 1087.73C1869.2 1061.37 1853.01 1040 1824.83 1040H1324.73C1296.55 1040 1265.02 1061.77 1254.99 1088.13L957.085 1874.16C950.359 1900.49 946.112 1928.03 946.111 1956.4C946.112 2141.05 1104.85 2291.25 1288.75 2291.25C1349.47 2291.25 1410.19 2291.45 1470.9 2291.25Z" fill="url(#paint0_linear_159_296)"/>
-          <path d="M2895.91 2025.84C2902.64 1999.51 2906.21 1971.96 2906.21 1943.6C2906.21 1758.95 2747.47 1608.75 2563.56 1608.75H2394.64C2389.27 1608.7 2384.82 1608.74 2381.41 1608.75C2237.75 1608.75 2094.09 1608.7 1950.42 1608.68C1923.56 1608.68 1901.55 1587.91 1899.54 1561.54C1899.45 1560.25 1899.39 1558.94 1899.39 1557.62V1091.49C1899.4 1063.29 1922.24 1040 1950.43 1040C2060.28 1040 2722.17 1040 2778.41 1040C2961.89 1043.76 3120 1192.76 3120 1379.42C3120 1412.75 3107.27 1472.78 3085.9 1524.75L2895.91 2025.84Z" fill="#FFBE40"/>
-          <path d="M2395.33 1608.75C2389.95 1608.7 2385.5 1608.74 2382.1 1608.75C2417.83 1608.75 2437.6 1640 2424.88 1673.43L1993.83 2812.27C1983.8 2838.63 1999.99 2860 2028.17 2860H2528.27C2556.45 2860 2587.98 2838.23 2598.01 2811.87L2895.91 2025.84C2902.64 1999.5 2906.21 1972.16 2906.21 1943.78C2906.21 1759.13 2748.15 1608.75 2564.25 1608.75H2395.33Z" fill="url(#paint1_linear_159_296)"/>
+          <path
+            d="M4195 1430.07C4211.57 1430.07 4225 1443.5 4225 1460.07V1595.07C4225 1611.64 4211.57 1625.07 4195 1625.07H3735C3718.43 1625.07 3705 1638.5 3705 1655.07V1855C3705 1871.57 3718.43 1885 3735 1885H4130C4146.57 1885 4160 1898.43 4160 1915V2050C4160 2066.57 4146.57 2080 4130 2080H3735C3718.43 2080 3705 2093.43 3705 2110V2440.07C3705 2456.64 3691.57 2470.07 3675 2470.07H3540C3523.43 2470.07 3510 2456.64 3510 2440.07V1460.07C3510 1443.5 3523.43 1430.07 3540 1430.07H4195Z"
+            fill="#404040" />
+          <path
+            d="M4520 1430.07C4536.57 1430.07 4550 1443.5 4550 1460.07V2440.07C4550 2456.64 4536.57 2470.07 4520 2470.07H4385C4368.43 2470.07 4355 2456.64 4355 2440.07L4355 1460.07C4355 1443.5 4368.43 1430.07 4385 1430.07L4520 1430.07Z"
+            fill="#404040" />
+          <path
+            d="M6210 1690.07C6226.57 1690.07 6240 1703.5 6240 1720.07V1855.07C6240 1871.64 6226.57 1885.07 6210 1885.07H5890.33C5860.22 1885.07 5848.88 1924.47 5874.38 1940.48L6136.45 2104.98C6198.26 2138.14 6240.15 2202.32 6240.15 2276.07C6240.15 2382.32 6153.19 2467.73 6045 2470.07H5621C5604.43 2470.07 5590 2456.64 5590 2440.07V2305.07C5590 2288.5 5604.43 2275.07 5621 2275.07H5936.51C5966.62 2275.07 5977.96 2235.67 5952.45 2219.66L5684.44 2051.47C5626.49 2016.76 5590 1952.97 5590 1885.07C5590 1784.38 5675.84 1690.07 5779 1690.07H6210Z"
+            fill="#404040" />
+          <path
+            d="M6535 1430C6551.57 1430 6565 1443.43 6565 1460V1660C6565 1676.57 6578.43 1690 6595 1690C6693.37 1690 6791.74 1690 6890.11 1690C6995.93 1690 7082.05 1776.33 7084.93 1883.94C7084.97 1884.62 7085 1885.31 7085 1886V2440C7085 2456.57 7071.57 2470 7055 2470H6920C6903.43 2470 6890 2456.57 6890 2440C6890 2265.2 6890.02 2092.03 6890.02 1915C6890.02 1898.43 6876.59 1885 6860.02 1885H6595C6578.43 1885 6565 1898.43 6565 1915V2440C6565 2456.57 6551.57 2470 6535 2470H6400C6383.43 2470 6370 2456.57 6370 2440V1460C6370 1443.43 6383.43 1430 6400 1430H6535Z"
+            fill="#404040" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M5080 1690C5300.36 1690 5479 1864.61 5479 2080C5479 2200.02 5479 2320.05 5479 2440.07C5479 2456.64 5465.57 2470.07 5449 2470.07H5314C5297.43 2470.07 5284 2456.64 5284 2440.07C5284 2429.06 5272.01 2422.12 5262.17 2427.07C5207.56 2454.51 5145.63 2470 5080 2470C4859.64 2470 4681 2295.39 4681 2080C4681 1864.61 4859.64 1690 5080 1690ZM5080 1885C4972.3 1885 4885 1972.3 4885 2080C4885 2187.7 4972.3 2275 5080 2275C5187.7 2275 5275 2187.7 5275 2080C5275 1972.3 5187.7 1885 5080 1885Z"
+            fill="#404040" />
+          <path
+            d="M957.085 1874.16C950.363 1900.49 946.112 1928.04 946.111 1956.4C946.112 2141.05 1105.53 2291.25 1289.44 2291.25H1458.36C1463.73 2291.3 1468.18 2291.26 1471.59 2291.25C1615.25 2291.25 1758.91 2291.3 1902.58 2291.32C1929.44 2291.32 1951.45 2312.09 1953.46 2338.46C1953.55 2339.75 1953.61 2341.06 1953.61 2342.38V2808.51C1953.6 2836.71 1930.76 2860 1902.57 2860C1792.72 2860 1130.83 2860 1074.59 2860C891.11 2856.24 733 2707.24 733 2520.58C733 2487.25 745.733 2427.22 767.1 2375.25L957.085 1874.16Z"
+            fill="#FFBE40" />
+          <path
+            d="M1470.9 2291.25C1435.17 2291.25 1415.4 2260 1428.12 2226.57L1859.17 1087.73C1869.2 1061.37 1853.01 1040 1824.83 1040H1324.73C1296.55 1040 1265.02 1061.77 1254.99 1088.13L957.085 1874.16C950.359 1900.49 946.112 1928.03 946.111 1956.4C946.112 2141.05 1104.85 2291.25 1288.75 2291.25C1349.47 2291.25 1410.19 2291.45 1470.9 2291.25Z"
+            fill="url(#paint0_linear_159_296)" />
+          <path
+            d="M2895.91 2025.84C2902.64 1999.51 2906.21 1971.96 2906.21 1943.6C2906.21 1758.95 2747.47 1608.75 2563.56 1608.75H2394.64C2389.27 1608.7 2384.82 1608.74 2381.41 1608.75C2237.75 1608.75 2094.09 1608.7 1950.42 1608.68C1923.56 1608.68 1901.55 1587.91 1899.54 1561.54C1899.45 1560.25 1899.39 1558.94 1899.39 1557.62V1091.49C1899.4 1063.29 1922.24 1040 1950.43 1040C2060.28 1040 2722.17 1040 2778.41 1040C2961.89 1043.76 3120 1192.76 3120 1379.42C3120 1412.75 3107.27 1472.78 3085.9 1524.75L2895.91 2025.84Z"
+            fill="#FFBE40" />
+          <path
+            d="M2395.33 1608.75C2389.95 1608.7 2385.5 1608.74 2382.1 1608.75C2417.83 1608.75 2437.6 1640 2424.88 1673.43L1993.83 2812.27C1983.8 2838.63 1999.99 2860 2028.17 2860H2528.27C2556.45 2860 2587.98 2838.23 2598.01 2811.87L2895.91 2025.84C2902.64 1999.5 2906.21 1972.16 2906.21 1943.78C2906.21 1759.13 2748.15 1608.75 2564.25 1608.75H2395.33Z"
+            fill="url(#paint1_linear_159_296)" />
           <defs>
-            <linearGradient id="paint0_linear_159_296" x1="1924.5" y1="1540.88" x2="1996.64" y2="2382.31" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FFBE40"/><stop offset="1" stop-color="#FB8E30"/>
+            <linearGradient id="paint0_linear_159_296" x1="1924.5" y1="1540.88" x2="1996.64" y2="2382.31"
+              gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFBE40" />
+              <stop offset="1" stop-color="#FB8E30" />
             </linearGradient>
-            <linearGradient id="paint1_linear_159_296" x1="2510.72" y1="2359.12" x2="2372.49" y2="1534.68" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FFBE40"/><stop offset="1" stop-color="#FB8E30"/>
+            <linearGradient id="paint1_linear_159_296" x1="2510.72" y1="2359.12" x2="2372.49" y2="1534.68"
+              gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFBE40" />
+              <stop offset="1" stop-color="#FB8E30" />
             </linearGradient>
           </defs>
         </svg>
@@ -239,43 +371,48 @@
           選擇你的目的地，輕鬆啟動 eSIM，讓每一次旅程都暢行無阻
         </p>
 
-        <button disabled
-          class="inline-block bg-mango-orange-60 text-white px-8 py-4 rounded-full font-bold text-lg cursor-not-allowed">
-          即將推出
+        <button onclick="document.getElementById('buy-section').scrollIntoView({behavior:'smooth'})"
+          class="inline-block gradient-mango text-white px-8 py-4 rounded-full font-bold text-lg cursor-pointer hover:opacity-90 transition-opacity">
+          立即購買
         </button>
       </div>
     </section>
 
-    <!-- View 1：國家選擇 -->
-    <div id="view-countries" class="view active max-w-4xl mx-auto px-4 py-10">
-      <div class="text-center mb-10">
-        <h1 class="text-3xl font-bold text-primary-text mb-2">出發前，先選目的地</h1>
-        <p class="text-secondary-text mb-5">購買 eSIM，抵達即上網，不換 SIM 卡</p>
-        <div class="flex flex-wrap justify-center gap-2">
-          <span class="feature-chip"><i class="iconoir-flash" style="font-size:12px;color:#fb8e30"></i> 即時開通</span>
-          <span class="feature-chip"><i class="iconoir-wifi" style="font-size:12px;color:#fb8e30"></i> 5G / 4G 支援</span>
-          <span class="feature-chip"><i class="iconoir-smartphone-device" style="font-size:12px;color:#fb8e30"></i> 免換實體 SIM</span>
-          <span class="feature-chip"><i class="iconoir-headset" style="font-size:12px;color:#fb8e30"></i> 中文客服</span>
+    <section id="buy-section" style="scroll-margin-top: 72px">
+      <!-- View 1：國家選擇 -->
+      <div id="view-countries" class="view active max-w-4xl mx-auto px-4 py-10">
+        <div class="text-center mb-10">
+          <h1 class="text-3xl font-bold text-primary-text mb-2">出發前，先選目的地</h1>
+          <p class="text-secondary-text mb-5">購買 eSIM，抵達即上網，不換 SIM 卡</p>
+          <div class="flex flex-wrap justify-center gap-2">
+            <span class="feature-chip"><i class="iconoir-flash" style="font-size:12px;color:#fb8e30"></i> 即時開通</span>
+            <span class="feature-chip"><i class="iconoir-wifi" style="font-size:12px;color:#fb8e30"></i> 5G / 4G
+              支援</span>
+            <span class="feature-chip"><i class="iconoir-smartphone-device" style="font-size:12px;color:#fb8e30"></i>
+              免換實體 SIM</span>
+            <span class="feature-chip"><i class="iconoir-headset" style="font-size:12px;color:#fb8e30"></i> 中文客服</span>
+          </div>
         </div>
+        <h2 class="text-sm font-semibold text-secondary-text uppercase tracking-wider mb-4">熱門目的地</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="country-grid"></div>
       </div>
-      <h2 class="text-sm font-semibold text-secondary-text uppercase tracking-wider mb-4">熱門目的地</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="country-grid"></div>
-    </div>
 
-    <!-- View 2：方案選擇 -->
-    <div id="view-plans" class="view max-w-4xl mx-auto px-4 py-10 pb-36">
-      <div class="flex items-center gap-3 mb-8">
-        <button id="back-btn" onclick="goBack()" class="flex items-center gap-1.5 text-sm text-secondary-text font-medium">
-          <i class="iconoir-arrow-left" style="font-size:16px"></i>
-          <span>所有目的地</span>
-        </button>
-        <span class="text-gray-300">|</span>
-        <h1 class="text-lg font-bold text-primary-text" id="plans-country-title"></h1>
+      <!-- View 2：方案選擇 -->
+      <div id="view-plans" class="view max-w-4xl mx-auto px-4 py-10 pb-36">
+        <div class="flex items-center gap-3 mb-8">
+          <button id="back-btn" onclick="goBack()"
+            class="flex items-center gap-1.5 text-sm text-secondary-text font-medium">
+            <i class="iconoir-arrow-left" style="font-size:16px"></i>
+            <span>所有目的地</span>
+          </button>
+          <span class="text-gray-300">|</span>
+          <h1 class="text-lg font-bold text-primary-text" id="plans-country-title"></h1>
+        </div>
+        <div id="plans-container"></div>
       </div>
-      <div id="plans-container"></div>
-    </div>
+    </section>
 
-      <!-- Features Section -->
+    <!-- Features Section -->
     <section id="features" class="py-10 text-center bg-warm-white">
       <div class="max-w-4xl mx-auto px-4">
         <h2 class="text-4xl mb-5 font-flash font-bold text-primary-text">
@@ -333,158 +470,515 @@
     <!-- Use Cases Section -->
     <section class="bg-white py-10 text-center relative overflow-hidden">
       <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-4xl mb-5 font-flash font-bold text-primary-text">
-        適用於各種旅程
-      </h2>
+        <h2 class="text-4xl mb-5 font-flash font-bold text-primary-text">
+          適用於各種旅程
+        </h2>
 
-      <p class="text-lg text-secondary-text font-medium mb-12">
-        無論你去哪裡,我們都與你同行
-      </p>
+        <p class="text-lg text-secondary-text font-medium mb-12">
+          無論你去哪裡,我們都與你同行
+        </p>
 
-      <!-- Swiper Container -->
-      <div class="swiper useCasesSwiper max-w-4xl mx-auto">
-        <div class="swiper-wrapper">
-          <!-- Slide 1 - 商務出差 -->
-          <div class="swiper-slide">
-            <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100">
-              <div
-                class="relative h-64 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                <img src="https://picsum.photos/1200/600?business" class="h-full w-full object-cover" />
+        <!-- Swiper Container -->
+        <div class="swiper useCasesSwiper max-w-4xl mx-auto">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 - 商務出差 -->
+            <div class="swiper-slide">
+              <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100">
+                <div class="relative h-64 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                  <img src="https://picsum.photos/1200/600?business" class="h-full w-full object-cover" />
+                </div>
+
+                <div class="p-8 text-left bg-warm-white">
+                  <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
+                    商務出差
+                  </h3>
+
+                  <p class="text-secondary-text font-medium leading-relaxed">
+                    無論是跨國會議或遠端辦公,確保你隨時保持高速連線,不錯過任何重要資訊
+                  </p>
+                </div>
               </div>
+            </div>
 
-              <div class="p-8 text-left bg-warm-white">
-                <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
-                  商務出差
-                </h3>
+            <!-- Slide 2 - 自由行旅客 -->
+            <div class="swiper-slide">
+              <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100">
+                <div
+                  class="relative h-64 bg-gradient-to-br from-deep-orange to-lightning-gold flex items-center justify-center">
+                  <img src="https://picsum.photos/1200/600?travel" class="h-full w-full object-cover" />
+                </div>
 
-                <p class="text-secondary-text font-medium leading-relaxed">
-                  無論是跨國會議或遠端辦公,確保你隨時保持高速連線,不錯過任何重要資訊
-                </p>
+                <div class="p-8 text-left bg-warm-white">
+                  <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
+                    自由行旅客
+                  </h3>
+
+                  <p class="text-secondary-text font-medium leading-relaxed">
+                    輕鬆分享旅途點滴,使用地圖導航,不再為尋找 Wi-Fi
+                    而煩惱,讓旅行更自由
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 - 數位遊牧者 -->
+            <div class="swiper-slide">
+              <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100">
+                <div
+                  class="relative h-64 bg-gradient-to-br from-purple-600 to-blue-500 flex items-center justify-center">
+                  <img src="https://picsum.photos/1200/600?nomad" class="h-full w-full object-cover" />
+                </div>
+
+                <div class="p-8 text-left bg-warm-white">
+                  <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
+                    數位遊牧者
+                  </h3>
+
+                  <p class="text-secondary-text font-medium leading-relaxed">
+                    在世界各地工作與生活,隨時隨地保持穩定網路連線,實現真正的遠距工作自由
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 - 留學生 -->
+            <div class="swiper-slide">
+              <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100">
+                <div
+                  class="relative h-64 bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center">
+                  <img src="https://picsum.photos/1200/600?student" class="h-full w-full object-cover" />
+                </div>
+
+                <div class="p-8 text-left bg-warm-white">
+                  <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
+                    國際留學生
+                  </h3>
+
+                  <p class="text-secondary-text font-medium leading-relaxed">
+                    抵達異國第一時間就能上網,與家人聯繫報平安,快速適應新環境的學習生活
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5 - 家庭旅遊 -->
+            <div class="swiper-slide">
+              <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100">
+                <div class="relative h-64 bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center">
+                  <img src="https://picsum.photos/1200/600?family" class="h-full w-full object-cover" />
+                </div>
+
+                <div class="p-8 text-left bg-warm-white">
+                  <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
+                    家庭旅遊
+                  </h3>
+
+                  <p class="text-secondary-text font-medium leading-relaxed">
+                    全家出遊不必擔心網路問題,隨時查詢景點資訊、餐廳推薦,留下美好回憶
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 6 - 探險家 -->
+            <div class="swiper-slide">
+              <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100">
+                <div
+                  class="relative h-64 bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center">
+                  <img src="https://picsum.photos/1200/600?adventure" class="h-full w-full object-cover" />
+                </div>
+
+                <div class="p-8 text-left bg-warm-white">
+                  <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
+                    冒險探險家
+                  </h3>
+
+                  <p class="text-secondary-text font-medium leading-relaxed">
+                    深入偏遠地區探索未知世界,仍能保持通訊暢通,確保安全與緊急聯繫
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Slide 2 - 自由行旅客 -->
-          <div class="swiper-slide">
-            <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100">
-              <div
-                class="relative h-64 bg-gradient-to-br from-deep-orange to-lightning-gold flex items-center justify-center">
-                <img src="https://picsum.photos/1200/600?travel" class="h-full w-full object-cover" />
-              </div>
+          <!-- Navigation Buttons -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
 
-              <div class="p-8 text-left bg-warm-white">
-                <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
-                  自由行旅客
-                </h3>
-
-                <p class="text-secondary-text font-medium leading-relaxed">
-                  輕鬆分享旅途點滴,使用地圖導航,不再為尋找 Wi-Fi
-                  而煩惱,讓旅行更自由
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 3 - 數位遊牧者 -->
-          <div class="swiper-slide">
-            <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100">
-              <div class="relative h-64 bg-gradient-to-br from-purple-600 to-blue-500 flex items-center justify-center">
-                <img src="https://picsum.photos/1200/600?nomad" class="h-full w-full object-cover" />
-              </div>
-
-              <div class="p-8 text-left bg-warm-white">
-                <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
-                  數位遊牧者
-                </h3>
-
-                <p class="text-secondary-text font-medium leading-relaxed">
-                  在世界各地工作與生活,隨時隨地保持穩定網路連線,實現真正的遠距工作自由
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 4 - 留學生 -->
-          <div class="swiper-slide">
-            <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100">
-              <div class="relative h-64 bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center">
-                <img src="https://picsum.photos/1200/600?student" class="h-full w-full object-cover" />
-              </div>
-
-              <div class="p-8 text-left bg-warm-white">
-                <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
-                  國際留學生
-                </h3>
-
-                <p class="text-secondary-text font-medium leading-relaxed">
-                  抵達異國第一時間就能上網,與家人聯繫報平安,快速適應新環境的學習生活
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 5 - 家庭旅遊 -->
-          <div class="swiper-slide">
-            <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100">
-              <div class="relative h-64 bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center">
-                <img src="https://picsum.photos/1200/600?family" class="h-full w-full object-cover" />
-              </div>
-
-              <div class="p-8 text-left bg-warm-white">
-                <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
-                  家庭旅遊
-                </h3>
-
-                <p class="text-secondary-text font-medium leading-relaxed">
-                  全家出遊不必擔心網路問題,隨時查詢景點資訊、餐廳推薦,留下美好回憶
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 6 - 探險家 -->
-          <div class="swiper-slide">
-            <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100">
-              <div
-                class="relative h-64 bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center">
-                <img src="https://picsum.photos/1200/600?adventure" class="h-full w-full object-cover" />
-              </div>
-
-              <div class="p-8 text-left bg-warm-white">
-                <h3 class="mb-4 font-flash font-semibold text-2xl text-primary-text flex items-center">
-                  冒險探險家
-                </h3>
-
-                <p class="text-secondary-text font-medium leading-relaxed">
-                  深入偏遠地區探索未知世界,仍能保持通訊暢通,確保安全與緊急聯繫
-                </p>
-              </div>
-            </div>
-          </div>
+          <!-- Pagination -->
+          <div class="swiper-pagination !bottom-0"></div>
         </div>
-
-        <!-- Navigation Buttons -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-
-        <!-- Pagination -->
-        <div class="swiper-pagination !bottom-0"></div>
-      </div>
       </div>
     </section>
 
   </main>
 
+  <!-- ── 結帳頁面 ─────────────────────────────── -->
+  <div id="checkout-page" class="hidden fixed inset-0 z-[55] bg-gray-50 overflow-y-auto" style="top:72px">
+
+    <div class="h-[10px] w-full gradient-mango-horizontal"></div>
+
+    <!-- 標題列 -->
+    <div class="max-w-4xl mx-auto px-4 py-5">
+      <div class="flex items-center gap-3">
+        <button onclick="closeCheckout()" class="flex items-center gap-1.5 text-sm text-secondary-text font-medium">
+          <i class="iconoir-arrow-left" style="font-size:16px"></i>
+          <span>返回</span>
+        </button>
+        <span class="text-gray-300">|</span>
+        <h1 class="text-lg font-bold text-primary-text">安心結帳</h1>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 pb-10">
+      <div class="md:grid md:grid-cols-2 md:gap-6 space-y-4 md:space-y-0">
+
+        <!-- 左欄：商品 + 電子發票 -->
+        <div class="space-y-4">
+
+          <!-- 商品摘要 -->
+          <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+            <button onclick="toggleSection('co-product')"
+              class="w-full flex items-center justify-between px-5 py-4 font-semibold text-primary-text">
+              <span>商品</span>
+              <i id="co-product-icon" class="iconoir-nav-arrow-up text-gray-400" style="font-size:18px"></i>
+            </button>
+            <div id="co-product" class="px-5 pb-5 flex items-start gap-4">
+              <img id="co-flag" src="" alt="" class="h-10 rounded mt-0.5"
+                style="width:auto;box-shadow:0 1px 4px rgba(0,0,0,0.12)">
+              <div>
+                <p class="font-bold text-primary-text" id="co-name">—</p>
+                <p class="text-sm text-secondary-text mt-0.5" id="co-detail">—</p>
+                <div class="flex items-center gap-2 mt-1">
+                  <span class="font-bold text-mango-orange" id="co-price">NT$0</span>
+                  <span class="text-xs text-gray-400 line-through" id="co-original-price"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 電子發票 -->
+          <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+            <button onclick="toggleSection('co-invoice')" class="w-full flex items-center justify-between px-5 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-gray-100 rounded-xl flex items-center justify-center">
+                  <i class="iconoir-book-stack" style="font-size:18px;color:#595959"></i>
+                </div>
+                <div class="text-left">
+                  <p class="font-semibold text-primary-text text-sm">新增電子發票</p>
+                  <p class="text-xs text-secondary-text" id="co-invoice-summary">/ 個人發票</p>
+                </div>
+              </div>
+              <i id="co-invoice-icon" class="iconoir-nav-arrow-right text-gray-400" style="font-size:18px"></i>
+            </button>
+            <div id="co-invoice" class="hidden px-5 pb-5 space-y-3">
+              <div>
+                <label class="text-sm font-medium text-primary-text block mb-1.5">載具條碼 <span
+                    class="text-gray-400 font-normal">(選填)</span></label>
+                <input id="co-carrier" type="text" placeholder="/XXXXXXX"
+                  class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-2 focus:border-[#fb8e30] transition-colors uppercase"
+                  oninput="validateField('co-carrier')" onblur="validateField('co-carrier')" />
+                <p id="co-carrier-err" class="hidden text-xs text-red-500 mt-1">格式應為 /XXXXXXX（/ 開頭共 8 碼）</p>
+              </div>
+              <div>
+                <label class="text-sm font-medium text-primary-text block mb-1.5">統一編號 <span
+                    class="text-gray-400 font-normal">(選填)</span></label>
+                <input id="co-tax-id" type="text" placeholder="12345678" maxlength="8"
+                  class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-2 focus:border-[#fb8e30] transition-colors"
+                  oninput="validateField('co-tax-id')" onblur="validateField('co-tax-id')" />
+                <p id="co-tax-id-err" class="hidden text-xs text-red-500 mt-1">請輸入 8 位數字</p>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+        <!-- 右欄：訂購人資料 + 條款 + 購買 -->
+        <div class="space-y-4">
+
+          <!-- 訂購人資料 -->
+          <div class="bg-white rounded-2xl border border-gray-100 shadow-sm px-5 py-5">
+            <h2 class="font-bold text-primary-text mb-1">訂購人資料</h2>
+            <p class="text-xs text-secondary-text mb-4">收據將發送到此 Email 地址。請確保提供的 Email 正確。</p>
+            <div class="space-y-4">
+              <div>
+                <label class="text-sm font-medium text-primary-text block mb-1.5">Email</label>
+                <div class="relative">
+                  <input id="co-buyer-email" type="email" placeholder="example@gmail.com"
+                    class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-2 focus:border-[#fb8e30] transition-colors pr-20"
+                    oninput="validateField('co-buyer-email')" onblur="validateField('co-buyer-email')" />
+                  <span id="co-email-verified"
+                    class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-xs text-green-500 font-semibold flex items-center gap-1">
+                    <i class="iconoir-check" style="font-size:13px"></i> 已驗證
+                  </span>
+                </div>
+                <p id="co-buyer-email-err" class="hidden text-xs text-red-500 mt-1">請輸入正確的 Email 格式</p>
+              </div>
+              <div>
+                <label class="text-sm font-medium text-primary-text block mb-1.5">手機號碼 <span
+                    class="text-gray-400 font-normal">(選填)</span></label>
+                <input id="co-buyer-phone" type="tel" placeholder="0912-345-678"
+                  class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-2 focus:border-[#fb8e30] transition-colors"
+                  oninput="validateField('co-buyer-phone')" onblur="validateField('co-buyer-phone')" />
+                <p id="co-buyer-phone-err" class="hidden text-xs text-red-500 mt-1">請輸入正確的台灣手機格式（09xxxxxxxx）</p>
+              </div>
+              <label class="flex items-center gap-3 cursor-pointer">
+                <input id="co-marketing" type="checkbox" checked class="w-4 h-4 accent-mango-orange rounded" />
+                <span class="text-sm text-secondary-text">我想要收到促銷 Email</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 同意條款 + 購買 -->
+          <div class="bg-white rounded-2xl border border-gray-100 shadow-sm px-5 py-5 space-y-4">
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input id="co-agree" type="checkbox" class="w-4 h-4 mt-0.5 accent-mango-orange rounded" />
+              <span class="text-sm text-secondary-text">
+                進行付款，即表示同意
+                <a href="#" onclick="openModal('modal-refund');return false;" class="underline text-primary-text">退款政策</a>和
+                <a href="#" onclick="openModal('modal-terms');return false;" class="underline text-primary-text">條款與條件</a>
+              </span>
+            </label>
+            <div class="flex items-center justify-between pt-1">
+              <div>
+                <p class="text-xs text-secondary-text">總付款金額</p>
+                <p class="text-2xl font-bold text-gradient-mango" id="co-total-price">NT$0</p>
+              </div>
+              <button onclick="submitCheckout()"
+                class="gradient-mango text-white font-bold px-10 py-3.5 rounded-full text-base shadow-lg">
+                下一步
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="h-[10px] w-full gradient-mango-horizontal"></div>
+  </div>
+
+  <!-- 感謝訂購頁面 -->
+  <div id="confirm-page" class="hidden fixed inset-0 z-[60] bg-gray-50 overflow-y-auto" style="top:72px">
+    <div class="h-[10px] w-full gradient-mango-horizontal"></div>
+    <div class="max-w-lg mx-auto px-4 py-8 flex flex-col gap-5">
+
+      <!-- 標題 -->
+      <div class="text-center mt-2">
+        <h1 class="text-2xl font-bold text-primary-text">感謝訂購</h1>
+      </div>
+
+      <!-- 匯款資訊 -->
+      <div onclick="copyRemittanceInfo()" class="w-full bg-white rounded-2xl border border-gray-100 shadow-sm px-5 py-4 space-y-3 cursor-pointer active:bg-gray-50 transition-colors">
+        <div class="flex items-center justify-between">
+          <p class="text-xs font-semibold text-secondary-text">匯款資訊</p>
+          <span id="copy-btn-text" class="text-xs text-mango-orange flex items-center gap-1">
+            <i class="iconoir-copy" style="font-size:13px"></i>複製通知內容
+          </span>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between text-sm">
+            <span class="text-secondary-text">銀行</span>
+            <span class="font-medium text-primary-text">台企銀（050）</span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-secondary-text">戶名</span>
+            <span class="font-medium text-primary-text">閃電通國際股份有限公司</span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-secondary-text">帳號</span>
+            <span class="font-medium text-primary-text tracking-wider">4000-OOOO-OOOO-1234</span>
+          </div>
+        </div>
+        <hr class="border-gray-100">
+        <p class="text-xs text-secondary-text">請將已匯款通知寄至：<a href="mailto:official@flashtele.com" class="font-medium text-primary-text underline" onclick="event.stopPropagation()">official@flashtele.com</a></p>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="w-full bg-white rounded-2xl border border-gray-100 shadow-sm px-5 py-4 space-y-3">
+        <p class="text-xs font-semibold text-secondary-text">注意事項</p>
+        <div class="space-y-2.5">
+          <div class="flex gap-2.5 text-sm">
+            <span class="w-5 h-5 rounded-full gradient-mango text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+            <p class="text-secondary-text">請於 <span class="font-semibold text-primary-text">24 小時內</span>完成匯款，逾時訂單將自動取消。</p>
+          </div>
+          <div class="flex gap-2.5 text-sm">
+            <span class="w-5 h-5 rounded-full gradient-mango text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+            <p class="text-secondary-text">匯款完成後，請將<span class="font-semibold text-primary-text">帳號末 5 碼</span>回覆至 <span class="font-medium text-primary-text">official@flashtele.com</span> <span class="font-semibold text-primary-text">並附上訂單資訊</span>。</p>
+          </div>
+          <div class="flex gap-2.5 text-sm">
+            <span class="w-5 h-5 rounded-full gradient-mango text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+            <p class="text-secondary-text">系統核對金額後，將自動寄送 eSIM QR Code 至您的信箱。</p>
+          </div>
+          <div class="flex gap-2.5 text-sm">
+            <span class="w-5 h-5 rounded-full gradient-mango text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
+            <p class="text-secondary-text">訂單狀態將由「已成立」更新為「已完成」，您可憑確認信查詢。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 訂單摘要卡 -->
+      <div class="w-full bg-white rounded-2xl border border-gray-100 shadow-sm px-5 py-5 space-y-4">
+
+        <!-- 商品 -->
+        <div class="bg-gray-50 rounded-xl px-4 py-4 flex items-center gap-4">
+          <img id="confirm-flag" src="" alt="" class="h-10 rounded" style="width:auto;box-shadow:0 1px 4px rgba(0,0,0,0.12)">
+          <div>
+            <p class="font-bold text-primary-text" id="confirm-name">—</p>
+            <p class="text-sm text-secondary-text" id="confirm-detail">—</p>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="font-bold text-primary-text" id="confirm-price">NT$0</span>
+              <span class="text-xs text-gray-400 line-through" id="confirm-original-price"></span>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-gray-100">
+
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-secondary-text">訂單編號</span>
+          <span class="font-medium text-primary-text" id="confirm-order-id">—</span>
+        </div>
+
+        <hr class="border-gray-100">
+
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-secondary-text">付款方式</span>
+          <span class="font-medium text-primary-text">銀行匯款</span>
+        </div>
+
+        <hr class="border-gray-100">
+
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-secondary-text">總付款金額</span>
+          <span class="font-semibold text-primary-text" id="confirm-total">NT$0</span>
+        </div>
+      </div>
+
+      <!-- 按鈕區 -->
+      <div class="w-full flex gap-2">
+        <button onclick="closeConfirm()"
+          class="w-full bg-white border border-gray-200 rounded-full py-4 text-base font-medium text-primary-text shadow-sm">
+          返回首頁
+        </button>
+      </div>
+    </div>
+    <div class="h-[10px] w-full gradient-mango-horizontal"></div>
+  </div>
+
+  <!-- ── 彈窗：退款政策 ── -->
+  <div id="modal-refund" class="hidden fixed inset-0 z-[80] flex items-end sm:items-center justify-center px-0 sm:px-4">
+    <div class="absolute inset-0 bg-black/50" onclick="closeModal('modal-refund')"></div>
+    <div class="relative bg-white w-full sm:max-w-lg rounded-t-3xl sm:rounded-2xl shadow-2xl max-h-[85vh] flex flex-col">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+        <h2 class="font-bold text-primary-text text-base">退款政策</h2>
+        <button onclick="closeModal('modal-refund')" class="text-gray-400 hover:text-gray-600">
+          <i class="iconoir-xmark" style="font-size:20px"></i>
+        </button>
+      </div>
+      <div class="overflow-y-auto px-6 py-5 space-y-5 text-sm text-secondary-text leading-relaxed">
+
+        <div>
+          <p class="font-semibold text-primary-text mb-1">一、數位商品性質說明</p>
+          <p>本服務提供之 eSIM 為數位型電信服務，購買後以 QR Code 方式交付。QR Code 一經掃描安裝至裝置，即視為服務已完整提供。</p>
+        </div>
+
+        <div>
+          <p class="font-semibold text-primary-text mb-1">二、猶豫期適用說明</p>
+          <p>依據《消費者保護法》第 19 條及《通訊交易解除權合理例外情事適用準則》第 2 條第 5 款規定，本商品屬「一經提供即為完成之線上服務」，<span class="font-medium text-primary-text">於消費者啟用（掃描 QR Code 安裝）後，不適用 7 日猶豫期退貨規定。</span></p>
+        </div>
+
+        <div>
+          <p class="font-semibold text-primary-text mb-1">三、可申請退款的情況</p>
+          <ul class="space-y-1.5 list-disc list-inside">
+            <li>已付款但尚未收到 QR Code（可申請全額退款）</li>
+            <li>已收到 QR Code 但<span class="font-medium text-primary-text">尚未掃描啟用</span>，於 24 小時內提出申請（可申請全額退款）</li>
+            <li>eSIM 因技術瑕疵無法正常啟用，經確認非裝置相容性問題（提供補發或退款）</li>
+            <li>服務啟用後發生嚴重網路異常，且非當地電信業者維護造成（依實際情況協商退款）</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-semibold text-primary-text mb-1">四、不予退款的情況</p>
+          <ul class="space-y-1.5 list-disc list-inside">
+            <li>QR Code 已掃描啟用並正常使用</li>
+            <li>因消費者裝置不支援 eSIM 或不相容而無法使用</li>
+            <li>消費者自行操作錯誤導致 QR Code 失效</li>
+            <li>超出流量上限後的網速降速屬正常規格，不予退款</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-semibold text-primary-text mb-1">五、申請方式</p>
+          <p>請於符合退款條件的情況下，以購買時留存的 Email 聯繫客服，並說明訂單編號及退款原因，我們將於 3 個工作日內回覆處理結果。</p>
+        </div>
+
+        <p class="text-xs text-gray-400 pt-2 border-t border-gray-100">本政策依據中華民國《消費者保護法》及相關法規訂定，最終解釋權歸本公司所有。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 彈窗：條款與條件 ── -->
+  <div id="modal-terms" class="hidden fixed inset-0 z-[80] flex items-end sm:items-center justify-center px-0 sm:px-4">
+    <div class="absolute inset-0 bg-black/50" onclick="closeModal('modal-terms')"></div>
+    <div class="relative bg-white w-full sm:max-w-lg rounded-t-3xl sm:rounded-2xl shadow-2xl max-h-[85vh] flex flex-col">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+        <h2 class="font-bold text-primary-text text-base">條款與條件</h2>
+        <button onclick="closeModal('modal-terms')" class="text-gray-400 hover:text-gray-600">
+          <i class="iconoir-xmark" style="font-size:20px"></i>
+        </button>
+      </div>
+      <div class="overflow-y-auto px-6 py-5 space-y-5 text-sm text-secondary-text leading-relaxed">
+
+        <div>
+          <p class="font-semibold text-primary-text mb-1">一、服務說明</p>
+          <p>本網站提供旅遊用 eSIM 上網服務，供消費者於海外旅遊期間使用。服務內容以購買當時方案頁面所列規格為準。</p>
+        </div>
+
+        <div>
+          <p class="font-semibold text-primary-text mb-1">二、購買資格</p>
+          <p>消費者須確認其裝置支援 eSIM 功能，且未遭電信業者鎖定（Carrier Lock）。因裝置不相容所造成的無法使用，本公司不負賠償責任。</p>
+        </div>
+
+        <div>
+          <p class="font-semibold text-primary-text mb-1">三、服務有效期</p>
+          <p>方案有效期自 eSIM 首次啟用當日起算，逾期未使用之流量不予保留或補發，亦不退費。</p>
+        </div>
+
+        <div>
+          <p class="font-semibold text-primary-text mb-1">四、個人資料保護</p>
+          <p>本公司依《個人資料保護法》蒐集、處理並利用消費者個人資料，僅用於訂單處理、客服聯繫及行銷通知（已勾選同意者），不會提供予第三方。消費者得隨時申請查閱、更正或刪除個人資料。</p>
+        </div>
+
+        <div>
+          <p class="font-semibold text-primary-text mb-1">五、責任限制</p>
+          <p>因不可抗力、當地電信業者網路異常或政府管制所造成的服務中斷，本公司不負賠償責任，但將盡力協助消費者解決問題。</p>
+        </div>
+
+        <div>
+          <p class="font-semibold text-primary-text mb-1">六、準據法</p>
+          <p>本條款依中華民國法律解釋及適用，如有爭議以台灣台北地方法院為第一審管轄法院。</p>
+        </div>
+
+        <p class="text-xs text-gray-400 pt-2 border-t border-gray-100">本條款最後更新日期：2025 年 3 月。</p>
+      </div>
+    </div>
+  </div>
+
   <!-- 底部結帳列 -->
-  <div id="checkout-bar" class="hidden-bar fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-100 shadow-2xl">
+  <div id="checkout-bar"
+    class="hidden-bar fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-100 shadow-2xl">
     <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
       <div class="flex-1 min-w-0">
         <p class="text-xs font-semibold text-primary-text truncate" id="bar-plan-name">—</p>
         <p id="bar-plan-detail" class="truncate mt-0.5">—</p>
         <p class="text-2xl font-bold text-gradient-mango leading-tight" id="bar-price">NT$0</p>
       </div>
-      <button disabled class="gradient-mango text-white font-bold px-8 py-3.5 rounded-full text-base whitespace-nowrap shadow-lg opacity-50 cursor-not-allowed">
-        即將推出
+      
+      <button onclick="openCheckout()"
+        class="gradient-mango text-white font-bold px-8 py-3.5 rounded-full text-base whitespace-nowrap shadow-lg">
+        立即購買
       </button>
     </div>
   </div>
@@ -498,61 +992,61 @@
       JP: {
         name: '日本', carrier: 'KDDI', flag: '🇯🇵',
         plans: [
-          { id: 'JP-1D-1G',  duration: 1,  traffic: '1GB', totalGB: '1GB',   price: 120  },
-          { id: 'JP-3D-1G',  duration: 3,  traffic: '1GB', totalGB: '3GB',   price: 249  },
-          { id: 'JP-3D-2G',  duration: 3,  traffic: '2GB', totalGB: '6GB',   price: 349  },
-          { id: 'JP-3D-3G',  duration: 3,  traffic: '3GB', totalGB: '9GB',   price: 429  },
-          { id: 'JP-5D-1G',  duration: 5,  traffic: '1GB', totalGB: '5GB',   price: 349  },
-          { id: 'JP-5D-2G',  duration: 5,  traffic: '2GB', totalGB: '10GB',  price: 499  },
-          { id: 'JP-5D-3G',  duration: 5,  traffic: '3GB', totalGB: '15GB',  price: 549  },
-          { id: 'JP-7D-1G',  duration: 7,  traffic: '1GB', totalGB: '7GB',   price: 399  },
-          { id: 'JP-7D-2G',  duration: 7,  traffic: '2GB', totalGB: '14GB',  price: 559  },
-          { id: 'JP-7D-3G',  duration: 7,  traffic: '3GB', totalGB: '21GB',  price: 699  },
-          { id: 'JP-10D-1G', duration: 10, traffic: '1GB', totalGB: '10GB',  price: 499  },
-          { id: 'JP-10D-2G', duration: 10, traffic: '2GB', totalGB: '20GB',  price: 699  },
-          { id: 'JP-10D-3G', duration: 10, traffic: '3GB', totalGB: '30GB',  price: 859  },
-          { id: 'JP-15D-1G', duration: 15, traffic: '1GB', totalGB: '15GB',  price: 699  },
-          { id: 'JP-15D-2G', duration: 15, traffic: '2GB', totalGB: '30GB',  price: 999  },
-          { id: 'JP-15D-3G', duration: 15, traffic: '3GB', totalGB: '45GB',  price: 1299 },
-          { id: 'JP-30D-1G', duration: 30, traffic: '1GB', totalGB: '30GB',  price: 1288 },
-          { id: 'JP-30D-2G', duration: 30, traffic: '2GB', totalGB: '60GB',  price: 1888 },
-          { id: 'JP-30D-3G', duration: 30, traffic: '3GB', totalGB: '90GB',  price: 2488 },
-          { id: 'JP-BDL-X',  duration: 5,  traffic: '3GB', totalGB: '套組',  price: 1388, isBundle: true, bundleDesc: '4張組(1G×2)+(2G×2)' },
+          { id: 'JP-1D-1G', duration: 1, traffic: '1GB', totalGB: '1GB', price: 120 },
+          { id: 'JP-3D-1G', duration: 3, traffic: '1GB', totalGB: '3GB', price: 249 },
+          { id: 'JP-3D-2G', duration: 3, traffic: '2GB', totalGB: '6GB', price: 349 },
+          { id: 'JP-3D-3G', duration: 3, traffic: '3GB', totalGB: '9GB', price: 429 },
+          { id: 'JP-5D-1G', duration: 5, traffic: '1GB', totalGB: '5GB', price: 349 },
+          { id: 'JP-5D-2G', duration: 5, traffic: '2GB', totalGB: '10GB', price: 499 },
+          { id: 'JP-5D-3G', duration: 5, traffic: '3GB', totalGB: '15GB', price: 549 },
+          { id: 'JP-7D-1G', duration: 7, traffic: '1GB', totalGB: '7GB', price: 399 },
+          { id: 'JP-7D-2G', duration: 7, traffic: '2GB', totalGB: '14GB', price: 559 },
+          { id: 'JP-7D-3G', duration: 7, traffic: '3GB', totalGB: '21GB', price: 699 },
+          { id: 'JP-10D-1G', duration: 10, traffic: '1GB', totalGB: '10GB', price: 499 },
+          { id: 'JP-10D-2G', duration: 10, traffic: '2GB', totalGB: '20GB', price: 699 },
+          { id: 'JP-10D-3G', duration: 10, traffic: '3GB', totalGB: '30GB', price: 859 },
+          { id: 'JP-15D-1G', duration: 15, traffic: '1GB', totalGB: '15GB', price: 699 },
+          { id: 'JP-15D-2G', duration: 15, traffic: '2GB', totalGB: '30GB', price: 999 },
+          { id: 'JP-15D-3G', duration: 15, traffic: '3GB', totalGB: '45GB', price: 1299 },
+          { id: 'JP-30D-1G', duration: 30, traffic: '1GB', totalGB: '30GB', price: 1288 },
+          { id: 'JP-30D-2G', duration: 30, traffic: '2GB', totalGB: '60GB', price: 1888 },
+          { id: 'JP-30D-3G', duration: 30, traffic: '3GB', totalGB: '90GB', price: 2488 },
+          { id: 'JP-BDL-X', duration: 5, traffic: '3GB', totalGB: '套組', price: 1388, isBundle: true, bundleDesc: '4張組(1G×2)+(2G×2)' },
         ],
         unlimited: { id: 'JP-UL', dailyPrice: 199, fup: '3GB/日', network: '4G/5G' }
       },
       KR: {
         name: '南韓', carrier: 'SKT/KT', flag: '🇰🇷',
         plans: [
-          { id: 'KR-1D-1G',  duration: 1,  traffic: '1GB', totalGB: '1GB',   price: 120  },
-          { id: 'KR-3D-1G',  duration: 3,  traffic: '1GB', totalGB: '3GB',   price: 249  },
-          { id: 'KR-5D-2G',  duration: 5,  traffic: '2GB', totalGB: '10GB',  price: 499  },
-          { id: 'KR-10D-2G', duration: 10, traffic: '2GB', totalGB: '20GB',  price: 699  },
-          { id: 'KR-15D-1G', duration: 15, traffic: '1GB', totalGB: '15GB',  price: 699  },
-          { id: 'KR-30D-3G', duration: 30, traffic: '3GB', totalGB: '90GB',  price: 2488 },
+          { id: 'KR-1D-1G', duration: 1, traffic: '1GB', totalGB: '1GB', price: 120 },
+          { id: 'KR-3D-1G', duration: 3, traffic: '1GB', totalGB: '3GB', price: 249 },
+          { id: 'KR-5D-2G', duration: 5, traffic: '2GB', totalGB: '10GB', price: 499 },
+          { id: 'KR-10D-2G', duration: 10, traffic: '2GB', totalGB: '20GB', price: 699 },
+          { id: 'KR-15D-1G', duration: 15, traffic: '1GB', totalGB: '15GB', price: 699 },
+          { id: 'KR-30D-3G', duration: 30, traffic: '3GB', totalGB: '90GB', price: 2488 },
         ],
       },
       TH: {
         name: '泰國', carrier: 'AIS/DTAC', flag: '🇹🇭',
         plans: [
-          { id: 'TH-1D-1G',  duration: 1,  traffic: '1GB', totalGB: '1GB',   price: 120  },
-          { id: 'TH-5D-1G',  duration: 5,  traffic: '1GB', totalGB: '5GB',   price: 349  },
-          { id: 'TH-5D-2G',  duration: 5,  traffic: '2GB', totalGB: '10GB',  price: 499  },
-          { id: 'TH-7D-3G',  duration: 7,  traffic: '3GB', totalGB: '21GB',  price: 699  },
-          { id: 'TH-10D-2G', duration: 10, traffic: '2GB', totalGB: '20GB',  price: 699  },
-          { id: 'TH-BDL-X',  duration: 5,  traffic: '3GB', totalGB: '套組',  price: 1388, isBundle: true, bundleDesc: '4張組(1G×2)+(2G×2)' },
+          { id: 'TH-1D-1G', duration: 1, traffic: '1GB', totalGB: '1GB', price: 120 },
+          { id: 'TH-5D-1G', duration: 5, traffic: '1GB', totalGB: '5GB', price: 349 },
+          { id: 'TH-5D-2G', duration: 5, traffic: '2GB', totalGB: '10GB', price: 499 },
+          { id: 'TH-7D-3G', duration: 7, traffic: '3GB', totalGB: '21GB', price: 699 },
+          { id: 'TH-10D-2G', duration: 10, traffic: '2GB', totalGB: '20GB', price: 699 },
+          { id: 'TH-BDL-X', duration: 5, traffic: '3GB', totalGB: '套組', price: 1388, isBundle: true, bundleDesc: '4張組(1G×2)+(2G×2)' },
         ],
         unlimited: { id: 'TH-UL', dailyPrice: 199, fup: '3GB', network: '4G/5G', note: 'Daily' }
       },
       VN: {
         name: '越南', carrier: 'Viettel', flag: '🇻🇳',
         plans: [
-          { id: 'VN-1D-1G',  duration: 1,  traffic: '1GB', totalGB: '1GB',   price: 139  },
-          { id: 'VN-3D-1G',  duration: 3,  traffic: '1GB', totalGB: '3GB',   price: 289  },
-          { id: 'VN-5D-2G',  duration: 5,  traffic: '2GB', totalGB: '10GB',  price: 559  },
-          { id: 'VN-10D-2G', duration: 10, traffic: '2GB', totalGB: '20GB',  price: 799  },
-          { id: 'VN-15D-2G', duration: 15, traffic: '2GB', totalGB: '30GB',  price: 1149 },
-          { id: 'VN-30D-2G', duration: 30, traffic: '2GB', totalGB: '60GB',  price: 2188 },
+          { id: 'VN-1D-1G', duration: 1, traffic: '1GB', totalGB: '1GB', price: 139 },
+          { id: 'VN-3D-1G', duration: 3, traffic: '1GB', totalGB: '3GB', price: 289 },
+          { id: 'VN-5D-2G', duration: 5, traffic: '2GB', totalGB: '10GB', price: 559 },
+          { id: 'VN-10D-2G', duration: 10, traffic: '2GB', totalGB: '20GB', price: 799 },
+          { id: 'VN-15D-2G', duration: 15, traffic: '2GB', totalGB: '30GB', price: 1149 },
+          { id: 'VN-30D-2G', duration: 30, traffic: '2GB', totalGB: '60GB', price: 2188 },
         ],
       }
     };
@@ -569,7 +1063,7 @@
     function showView(id) {
       document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
       document.getElementById(id).classList.add('active');
-      document.getElementById('view-countries').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('buy-section').scrollIntoView({ behavior: 'smooth' });
     }
 
     function goToCountry(code) {
@@ -782,19 +1276,19 @@
     function calcUnlimitedPrice(countryCode) {
       const ul = PRODUCTS[countryCode].unlimited;
       const startInput = document.getElementById(`ul-start-${countryCode}`);
-      const endInput   = document.getElementById(`ul-end-${countryCode}`);
+      const endInput = document.getElementById(`ul-end-${countryCode}`);
       if (!startInput || !endInput) return;
 
       const start = new Date(startInput.value);
-      const end   = new Date(endInput.value);
+      const end = new Date(endInput.value);
       if (end < start) { endInput.value = startInput.value; return calcUnlimitedPrice(countryCode); }
 
-      const days  = Math.round((end - start) / 86400000) + 1;
+      const days = Math.round((end - start) / 86400000) + 1;
       const price = ul.dailyPrice * days;
 
-      const daysLabel  = document.getElementById(`ul-days-${countryCode}`);
+      const daysLabel = document.getElementById(`ul-days-${countryCode}`);
       const priceLabel = document.getElementById(`ul-price-${countryCode}`);
-      if (daysLabel)  daysLabel.textContent  = `共 ${days} 天`;
+      if (daysLabel) daysLabel.textContent = `共 ${days} 天`;
       if (priceLabel) priceLabel.textContent = ul.dailyPrice > 0 ? `NT$${price.toLocaleString()}` : 'NT$0';
 
       const card = document.querySelector('.unlimited-card');
@@ -810,14 +1304,20 @@
     }
 
     function updateCheckoutBar() {
-      const bar      = document.getElementById('checkout-bar');
-      const nameEl   = document.getElementById('bar-plan-name');
+      const bar = document.getElementById('checkout-bar');
+      const nameEl = document.getElementById('bar-plan-name');
       const detailEl = document.getElementById('bar-plan-detail');
-      const priceEl  = document.getElementById('bar-price');
+      const priceEl = document.getElementById('bar-price');
 
-      if (!selectedPlan) { bar.classList.add('hidden-bar'); return; }
+      const footer = document.querySelector('footer');
+      if (!selectedPlan) {
+        bar.classList.add('hidden-bar');
+        footer.style.paddingBottom = '';
+        return;
+      }
 
       bar.classList.remove('hidden-bar');
+      footer.style.paddingBottom = bar.offsetHeight + 'px';
       nameEl.textContent = selectedPlan.name;
 
       if (selectedPlan.type === 'unlimited') {
@@ -832,6 +1332,196 @@
       }
 
       priceEl.textContent = `NT$${selectedPlan.price.toLocaleString()}`;
+    }
+
+    // ── 結帳頁面 ──────────────────────────────
+    const FLAG_IMG = { JP: 'jp', KR: 'kr', TH: 'th', VN: 'vn' };
+
+    function openCheckout() {
+      if (!selectedPlan) return;
+      const country = PRODUCTS[currentCountry];
+      const plan = country.plans.find(p => p.id === selectedPlan.id);
+
+      // 填入商品摘要
+      document.getElementById('co-flag').src = `https://flagcdn.com/w80/${FLAG_IMG[currentCountry]}.png`;
+      document.getElementById('co-flag').alt = country.name;
+      document.getElementById('co-name').textContent = `${country.flag} ${country.name}`;
+      document.getElementById('co-total-price').textContent = `NT$${selectedPlan.price.toLocaleString()}`;
+      document.getElementById('co-price').textContent = `NT$${selectedPlan.price.toLocaleString()}`;
+
+      if (selectedPlan.type === 'unlimited') {
+        document.getElementById('co-detail').textContent = `無限流量 · ${selectedPlan.days} 天`;
+        document.getElementById('co-original-price').textContent = '';
+      } else if (plan) {
+        const detail = plan.isBundle
+          ? plan.bundleDesc
+          : `網路 ${plan.duration} 天 | ${plan.traffic}/天`;
+        document.getElementById('co-detail').textContent = detail;
+        document.getElementById('co-original-price').textContent = '';
+      }
+
+      document.getElementById('checkout-page').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCheckout() {
+      document.getElementById('checkout-page').classList.add('hidden');
+      document.body.style.overflow = '';
+      updateCheckoutBar();
+    }
+
+    function toggleSection(id) {
+      const el = document.getElementById(id);
+      const icon = document.getElementById(id + '-icon');
+      const isHidden = el.classList.contains('hidden');
+      el.classList.toggle('hidden', !isHidden);
+      if (icon) {
+        icon.className = isHidden
+          ? 'iconoir-nav-arrow-up text-gray-400'
+          : 'iconoir-nav-arrow-right text-gray-400';
+        icon.style.fontSize = '18px';
+      }
+    }
+
+    const FIELD_RULES = {
+      'co-buyer-email': { required: true,  test: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+      'co-buyer-phone': { required: false, test: v => /^09\d{8}$/.test(v.replace(/[-\s]/g, '')) },
+      'co-carrier':     { required: false, test: v => /^\/[A-Z0-9]{7}$/i.test(v) },
+      'co-tax-id':      { required: false, test: v => /^\d{8}$/.test(v) },
+    };
+
+    function validateField(id) {
+      const rule = FIELD_RULES[id];
+      if (!rule) return true;
+      const val = document.getElementById(id).value.trim();
+      const el = document.getElementById(id);
+      const err = document.getElementById(id + '-err');
+
+      // Email 已驗證 badge
+      if (id === 'co-buyer-email') {
+        const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+        document.getElementById('co-email-verified').classList.toggle('hidden', !ok);
+      }
+
+      let invalid = false;
+      if (rule.required && !val) {
+        invalid = true;
+      } else if (val && !rule.test(val)) {
+        invalid = true;
+      }
+
+      el.classList.toggle('border-red-400', invalid);
+      if (err) err.classList.toggle('hidden', !invalid);
+      return !invalid;
+    }
+
+    function selectPayment(type) {
+      const label = document.getElementById('payment-transfer-label');
+      label.style.borderColor = '#fb8e30';
+      label.style.background = '#fff8ee';
+      document.getElementById('co-bank-info').classList.remove('hidden');
+      document.getElementById('co-payment-err').classList.add('hidden');
+      document.querySelector('input[name="co-payment"]').checked = true;
+    }
+
+    function submitCheckout() {
+      const agree = document.getElementById('co-agree').checked;
+      // 驗證所有欄位
+      const fieldsOk = Object.keys(FIELD_RULES).map(id => validateField(id)).every(Boolean);
+      if (!fieldsOk) return;
+      if (!agree) { alert('請同意條款與條件'); return; }
+
+      const email = document.getElementById('co-buyer-email').value.trim();
+
+      // 填入確認頁資料
+      document.getElementById('confirm-flag').src = document.getElementById('co-flag').src;
+      document.getElementById('confirm-name').textContent = document.getElementById('co-name').textContent;
+      document.getElementById('confirm-detail').textContent = document.getElementById('co-detail').textContent;
+      document.getElementById('confirm-price').textContent = document.getElementById('co-price').textContent;
+      document.getElementById('confirm-original-price').textContent = document.getElementById('co-original-price').textContent;
+      document.getElementById('confirm-total').textContent = document.getElementById('co-total-price').textContent;
+
+      // 產生假訂單編號
+      const orderId = '#' + new Date().toISOString().slice(0,10).replace(/-/g,'') + '-' + Math.random().toString(36).slice(2,5).toUpperCase();
+      document.getElementById('confirm-order-id').textContent = orderId;
+
+      // 切換頁面
+      document.getElementById('checkout-page').classList.add('hidden');
+      document.getElementById('confirm-page').classList.remove('hidden');
+    }
+
+    function copyRemittanceInfo() {
+      const orderId  = document.getElementById('confirm-order-id').textContent;
+      const total    = document.getElementById('confirm-total').textContent;
+      const email    = document.getElementById('co-buyer-email').value.trim();
+      const name     = document.getElementById('confirm-name').textContent;
+      const detail   = document.getElementById('confirm-detail').textContent;
+
+      const text = [
+        '【已匯款通知】',
+        '',
+        `收件信箱：official@flashtele.com`,
+        `主旨：已匯款通知 ${orderId}`,
+        '',
+        '--- 訂單資訊 ---',
+        `訂單編號：${orderId}`,
+        `商品：${name} ${detail}`,
+        `金額：${total}`,
+        `聯絡信箱：${email}`,
+        '',
+        '--- 請填寫 ---',
+        '匯款帳號末 5 碼：＿＿＿＿＿',
+        '匯款時間：＿＿＿＿＿',
+        '',
+        '請將此內容寄至 official@flashtele.com，我們將於確認後 24 小時內發送 eSIM QR Code。',
+      ].join('\n');
+
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copy-btn-text');
+        btn.textContent = '已複製！請貼上至信件寄送';
+        setTimeout(() => { btn.textContent = '複製通知內容'; }, 3000);
+      }).catch(() => {
+        alert(text);
+      });
+    }
+
+    function confirmRemittance() {
+      const orderId  = document.getElementById('confirm-order-id').textContent;
+      const total    = document.getElementById('confirm-total').textContent;
+      const email    = document.getElementById('co-buyer-email').value.trim();
+      const name     = document.getElementById('confirm-name').textContent;
+      const detail   = document.getElementById('confirm-detail').textContent;
+
+      const subject = encodeURIComponent(`已匯款通知 ${orderId}`);
+      const body = encodeURIComponent([
+        '【已匯款通知】',
+        '',
+        `訂單編號：${orderId}`,
+        `商品：${name} ${detail}`,
+        `金額：${total}`,
+        `聯絡信箱：${email}`,
+        '',
+        '--- 請填寫 ---',
+        '匯款帳號末 5 碼：',
+        '匯款時間：',
+      ].join('\n'));
+
+      window.open(`https://mail.google.com/mail/?view=cm&to=official@flashtele.com&su=${subject}&body=${body}`, '_blank');
+    }
+
+    function closeConfirm() {
+      localStorage.clear();
+      location.reload();
+    }
+
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+      document.body.style.overflow = '';
     }
 
     // ── 初始化 ────────────────────────────────
@@ -858,21 +1548,43 @@
   <footer class="bg-warm-white py-10 text-center mt-4">
     <div class="flex justify-center mb-6">
       <svg class="h-8 w-auto" viewBox="733 1040 6352 1820" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4195 1430.07C4211.57 1430.07 4225 1443.5 4225 1460.07V1595.07C4225 1611.64 4211.57 1625.07 4195 1625.07H3735C3718.43 1625.07 3705 1638.5 3705 1655.07V1855C3705 1871.57 3718.43 1885 3735 1885H4130C4146.57 1885 4160 1898.43 4160 1915V2050C4160 2066.57 4146.57 2080 4130 2080H3735C3718.43 2080 3705 2093.43 3705 2110V2440.07C3705 2456.64 3691.57 2470.07 3675 2470.07H3540C3523.43 2470.07 3510 2456.64 3510 2440.07V1460.07C3510 1443.5 3523.43 1430.07 3540 1430.07H4195Z" fill="#404040"/>
-        <path d="M4520 1430.07C4536.57 1430.07 4550 1443.5 4550 1460.07V2440.07C4550 2456.64 4536.57 2470.07 4520 2470.07H4385C4368.43 2470.07 4355 2456.64 4355 2440.07L4355 1460.07C4355 1443.5 4368.43 1430.07 4385 1430.07L4520 1430.07Z" fill="#404040"/>
-        <path d="M6210 1690.07C6226.57 1690.07 6240 1703.5 6240 1720.07V1855.07C6240 1871.64 6226.57 1885.07 6210 1885.07H5890.33C5860.22 1885.07 5848.88 1924.47 5874.38 1940.48L6136.45 2104.98C6198.26 2138.14 6240.15 2202.32 6240.15 2276.07C6240.15 2382.32 6153.19 2467.73 6045 2470.07H5621C5604.43 2470.07 5590 2456.64 5590 2440.07V2305.07C5590 2288.5 5604.43 2275.07 5621 2275.07H5936.51C5966.62 2275.07 5977.96 2235.67 5952.45 2219.66L5684.44 2051.47C5626.49 2016.76 5590 1952.97 5590 1885.07C5590 1784.38 5675.84 1690.07 5779 1690.07H6210Z" fill="#404040"/>
-        <path d="M6535 1430C6551.57 1430 6565 1443.43 6565 1460V1660C6565 1676.57 6578.43 1690 6595 1690C6693.37 1690 6791.74 1690 6890.11 1690C6995.93 1690 7082.05 1776.33 7084.93 1883.94C7084.97 1884.62 7085 1885.31 7085 1886V2440C7085 2456.57 7071.57 2470 7055 2470H6920C6903.43 2470 6890 2456.57 6890 2440C6890 2265.2 6890.02 2092.03 6890.02 1915C6890.02 1898.43 6876.59 1885 6860.02 1885H6595C6578.43 1885 6565 1898.43 6565 1915V2440C6565 2456.57 6551.57 2470 6535 2470H6400C6383.43 2470 6370 2456.57 6370 2440V1460C6370 1443.43 6383.43 1430 6400 1430H6535Z" fill="#404040"/>
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M5080 1690C5300.36 1690 5479 1864.61 5479 2080C5479 2200.02 5479 2320.05 5479 2440.07C5479 2456.64 5465.57 2470.07 5449 2470.07H5314C5297.43 2470.07 5284 2456.64 5284 2440.07C5284 2429.06 5272.01 2422.12 5262.17 2427.07C5207.56 2454.51 5145.63 2470 5080 2470C4859.64 2470 4681 2295.39 4681 2080C4681 1864.61 4859.64 1690 5080 1690ZM5080 1885C4972.3 1885 4885 1972.3 4885 2080C4885 2187.7 4972.3 2275 5080 2275C5187.7 2275 5275 2187.7 5275 2080C5275 1972.3 5187.7 1885 5080 1885Z" fill="#404040"/>
-        <path d="M957.085 1874.16C950.363 1900.49 946.112 1928.04 946.111 1956.4C946.112 2141.05 1105.53 2291.25 1289.44 2291.25H1458.36C1463.73 2291.3 1468.18 2291.26 1471.59 2291.25C1615.25 2291.25 1758.91 2291.3 1902.58 2291.32C1929.44 2291.32 1951.45 2312.09 1953.46 2338.46C1953.55 2339.75 1953.61 2341.06 1953.61 2342.38V2808.51C1953.6 2836.71 1930.76 2860 1902.57 2860C1792.72 2860 1130.83 2860 1074.59 2860C891.11 2856.24 733 2707.24 733 2520.58C733 2487.25 745.733 2427.22 767.1 2375.25L957.085 1874.16Z" fill="#FFBE40"/>
-        <path d="M1470.9 2291.25C1435.17 2291.25 1415.4 2260 1428.12 2226.57L1859.17 1087.73C1869.2 1061.37 1853.01 1040 1824.83 1040H1324.73C1296.55 1040 1265.02 1061.77 1254.99 1088.13L957.085 1874.16C950.359 1900.49 946.112 1928.03 946.111 1956.4C946.112 2141.05 1104.85 2291.25 1288.75 2291.25C1349.47 2291.25 1410.19 2291.45 1470.9 2291.25Z" fill="url(#paint0_footer)"/>
-        <path d="M2895.91 2025.84C2902.64 1999.51 2906.21 1971.96 2906.21 1943.6C2906.21 1758.95 2747.47 1608.75 2563.56 1608.75H2394.64C2389.27 1608.7 2384.82 1608.74 2381.41 1608.75C2237.75 1608.75 2094.09 1608.7 1950.42 1608.68C1923.56 1608.68 1901.55 1587.91 1899.54 1561.54C1899.45 1560.25 1899.39 1558.94 1899.39 1557.62V1091.49C1899.4 1063.29 1922.24 1040 1950.43 1040C2060.28 1040 2722.17 1040 2778.41 1040C2961.89 1043.76 3120 1192.76 3120 1379.42C3120 1412.75 3107.27 1472.78 3085.9 1524.75L2895.91 2025.84Z" fill="#FFBE40"/>
-        <path d="M2395.33 1608.75C2389.95 1608.7 2385.5 1608.74 2382.1 1608.75C2417.83 1608.75 2437.6 1640 2424.88 1673.43L1993.83 2812.27C1983.8 2838.63 1999.99 2860 2028.17 2860H2528.27C2556.45 2860 2587.98 2838.23 2598.01 2811.87L2895.91 2025.84C2902.64 1999.5 2906.21 1972.16 2906.21 1943.78C2906.21 1759.13 2748.15 1608.75 2564.25 1608.75H2395.33Z" fill="url(#paint1_footer)"/>
+        <path
+          d="M4195 1430.07C4211.57 1430.07 4225 1443.5 4225 1460.07V1595.07C4225 1611.64 4211.57 1625.07 4195 1625.07H3735C3718.43 1625.07 3705 1638.5 3705 1655.07V1855C3705 1871.57 3718.43 1885 3735 1885H4130C4146.57 1885 4160 1898.43 4160 1915V2050C4160 2066.57 4146.57 2080 4130 2080H3735C3718.43 2080 3705 2093.43 3705 2110V2440.07C3705 2456.64 3691.57 2470.07 3675 2470.07H3540C3523.43 2470.07 3510 2456.64 3510 2440.07V1460.07C3510 1443.5 3523.43 1430.07 3540 1430.07H4195Z"
+          fill="#404040" />
+        <path
+          d="M4520 1430.07C4536.57 1430.07 4550 1443.5 4550 1460.07V2440.07C4550 2456.64 4536.57 2470.07 4520 2470.07H4385C4368.43 2470.07 4355 2456.64 4355 2440.07L4355 1460.07C4355 1443.5 4368.43 1430.07 4385 1430.07L4520 1430.07Z"
+          fill="#404040" />
+        <path
+          d="M6210 1690.07C6226.57 1690.07 6240 1703.5 6240 1720.07V1855.07C6240 1871.64 6226.57 1885.07 6210 1885.07H5890.33C5860.22 1885.07 5848.88 1924.47 5874.38 1940.48L6136.45 2104.98C6198.26 2138.14 6240.15 2202.32 6240.15 2276.07C6240.15 2382.32 6153.19 2467.73 6045 2470.07H5621C5604.43 2470.07 5590 2456.64 5590 2440.07V2305.07C5590 2288.5 5604.43 2275.07 5621 2275.07H5936.51C5966.62 2275.07 5977.96 2235.67 5952.45 2219.66L5684.44 2051.47C5626.49 2016.76 5590 1952.97 5590 1885.07C5590 1784.38 5675.84 1690.07 5779 1690.07H6210Z"
+          fill="#404040" />
+        <path
+          d="M6535 1430C6551.57 1430 6565 1443.43 6565 1460V1660C6565 1676.57 6578.43 1690 6595 1690C6693.37 1690 6791.74 1690 6890.11 1690C6995.93 1690 7082.05 1776.33 7084.93 1883.94C7084.97 1884.62 7085 1885.31 7085 1886V2440C7085 2456.57 7071.57 2470 7055 2470H6920C6903.43 2470 6890 2456.57 6890 2440C6890 2265.2 6890.02 2092.03 6890.02 1915C6890.02 1898.43 6876.59 1885 6860.02 1885H6595C6578.43 1885 6565 1898.43 6565 1915V2440C6565 2456.57 6551.57 2470 6535 2470H6400C6383.43 2470 6370 2456.57 6370 2440V1460C6370 1443.43 6383.43 1430 6400 1430H6535Z"
+          fill="#404040" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M5080 1690C5300.36 1690 5479 1864.61 5479 2080C5479 2200.02 5479 2320.05 5479 2440.07C5479 2456.64 5465.57 2470.07 5449 2470.07H5314C5297.43 2470.07 5284 2456.64 5284 2440.07C5284 2429.06 5272.01 2422.12 5262.17 2427.07C5207.56 2454.51 5145.63 2470 5080 2470C4859.64 2470 4681 2295.39 4681 2080C4681 1864.61 4859.64 1690 5080 1690ZM5080 1885C4972.3 1885 4885 1972.3 4885 2080C4885 2187.7 4972.3 2275 5080 2275C5187.7 2275 5275 2187.7 5275 2080C5275 1972.3 5187.7 1885 5080 1885Z"
+          fill="#404040" />
+        <path
+          d="M957.085 1874.16C950.363 1900.49 946.112 1928.04 946.111 1956.4C946.112 2141.05 1105.53 2291.25 1289.44 2291.25H1458.36C1463.73 2291.3 1468.18 2291.26 1471.59 2291.25C1615.25 2291.25 1758.91 2291.3 1902.58 2291.32C1929.44 2291.32 1951.45 2312.09 1953.46 2338.46C1953.55 2339.75 1953.61 2341.06 1953.61 2342.38V2808.51C1953.6 2836.71 1930.76 2860 1902.57 2860C1792.72 2860 1130.83 2860 1074.59 2860C891.11 2856.24 733 2707.24 733 2520.58C733 2487.25 745.733 2427.22 767.1 2375.25L957.085 1874.16Z"
+          fill="#FFBE40" />
+        <path
+          d="M1470.9 2291.25C1435.17 2291.25 1415.4 2260 1428.12 2226.57L1859.17 1087.73C1869.2 1061.37 1853.01 1040 1824.83 1040H1324.73C1296.55 1040 1265.02 1061.77 1254.99 1088.13L957.085 1874.16C950.359 1900.49 946.112 1928.03 946.111 1956.4C946.112 2141.05 1104.85 2291.25 1288.75 2291.25C1349.47 2291.25 1410.19 2291.45 1470.9 2291.25Z"
+          fill="url(#paint0_footer)" />
+        <path
+          d="M2895.91 2025.84C2902.64 1999.51 2906.21 1971.96 2906.21 1943.6C2906.21 1758.95 2747.47 1608.75 2563.56 1608.75H2394.64C2389.27 1608.7 2384.82 1608.74 2381.41 1608.75C2237.75 1608.75 2094.09 1608.7 1950.42 1608.68C1923.56 1608.68 1901.55 1587.91 1899.54 1561.54C1899.45 1560.25 1899.39 1558.94 1899.39 1557.62V1091.49C1899.4 1063.29 1922.24 1040 1950.43 1040C2060.28 1040 2722.17 1040 2778.41 1040C2961.89 1043.76 3120 1192.76 3120 1379.42C3120 1412.75 3107.27 1472.78 3085.9 1524.75L2895.91 2025.84Z"
+          fill="#FFBE40" />
+        <path
+          d="M2395.33 1608.75C2389.95 1608.7 2385.5 1608.74 2382.1 1608.75C2417.83 1608.75 2437.6 1640 2424.88 1673.43L1993.83 2812.27C1983.8 2838.63 1999.99 2860 2028.17 2860H2528.27C2556.45 2860 2587.98 2838.23 2598.01 2811.87L2895.91 2025.84C2902.64 1999.5 2906.21 1972.16 2906.21 1943.78C2906.21 1759.13 2748.15 1608.75 2564.25 1608.75H2395.33Z"
+          fill="url(#paint1_footer)" />
         <defs>
-          <linearGradient id="paint0_footer" x1="1924.5" y1="1540.88" x2="1996.64" y2="2382.31" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#FFBE40"/><stop offset="1" stop-color="#FB8E30"/>
+          <linearGradient id="paint0_footer" x1="1924.5" y1="1540.88" x2="1996.64" y2="2382.31"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFBE40" />
+            <stop offset="1" stop-color="#FB8E30" />
           </linearGradient>
-          <linearGradient id="paint1_footer" x1="2510.72" y1="2359.12" x2="2372.49" y2="1534.68" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#FFBE40"/><stop offset="1" stop-color="#FB8E30"/>
+          <linearGradient id="paint1_footer" x1="2510.72" y1="2359.12" x2="2372.49" y2="1534.68"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFBE40" />
+            <stop offset="1" stop-color="#FB8E30" />
           </linearGradient>
         </defs>
       </svg>
@@ -886,4 +1598,5 @@
   <div class="h-[10px] w-full gradient-mango-horizontal"></div>
 
 </body>
+
 </html>
