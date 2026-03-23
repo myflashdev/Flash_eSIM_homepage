@@ -615,11 +615,12 @@
 
   <!-- ── 結帳頁面 ─────────────────────────────── -->
   <div id="checkout-page" class="hidden fixed inset-0 z-[55] bg-gray-50 overflow-y-auto" style="top:72px">
+    <div class="flex flex-col min-h-full">
 
     <div class="h-[10px] w-full gradient-mango-horizontal"></div>
 
     <!-- 標題列 -->
-    <div class="max-w-4xl mx-auto px-4 py-5">
+    <div class="max-w-4xl mx-auto px-4 py-5 w-full">
       <div class="flex items-center gap-3">
         <button onclick="closeCheckout()" class="flex items-center gap-1.5 text-sm text-secondary-text font-medium">
           <i class="iconoir-arrow-left" style="font-size:16px"></i>
@@ -630,7 +631,7 @@
       </div>
     </div>
 
-    <div class="max-w-4xl mx-auto px-4 pb-10">
+    <div class="max-w-4xl mx-auto px-4 pb-10 w-full flex-1">
       <div class="md:grid md:grid-cols-2 md:gap-6 space-y-4 md:space-y-0">
 
         <!-- 左欄：商品 + 電子發票 -->
@@ -757,6 +758,7 @@
       </div>
     </div>
     <div class="h-[10px] w-full gradient-mango-horizontal"></div>
+    </div>
   </div>
 
   <!-- 感謝訂購頁面 -->
