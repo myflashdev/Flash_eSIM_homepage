@@ -272,6 +272,12 @@
       background: linear-gradient(135deg, #ffbe40 0%, #fb8e30 100%) !important;
     }
 
+    /* ── 共用 ── */
+    .icon-sm { font-size: 12px; color: #fb8e30; }
+    .icon-md { font-size: 18px; }
+    .icon-xl { font-size: 3.5rem; }
+    .flag-img { width: auto; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+
     /* ── Swiper ── */
     .useCasesSwiper {
       padding-bottom: 70px;
@@ -371,9 +377,9 @@
           選擇你的目的地，輕鬆啟動 eSIM，讓每一次旅程都暢行無阻
         </p>
 
-        <button onclick="document.getElementById('buy-section').scrollIntoView({behavior:'smooth'})"
-          class="inline-block gradient-mango text-white px-8 py-4 rounded-full font-bold text-lg cursor-pointer hover:opacity-90 transition-opacity">
-          立即購買
+        <button disabled
+          class="inline-block bg-[#FDD2AC] text-white px-8 py-4 rounded-full font-bold text-lg cursor-not-allowed">
+          即將上市
         </button>
       </div>
     </section>
@@ -385,12 +391,10 @@
           <h1 class="text-3xl font-bold text-primary-text mb-2">出發前，先選目的地</h1>
           <p class="text-secondary-text mb-5">購買 eSIM，抵達即上網，不換 SIM 卡</p>
           <div class="flex flex-wrap justify-center gap-2">
-            <span class="feature-chip"><i class="iconoir-flash" style="font-size:12px;color:#fb8e30"></i> 即時開通</span>
-            <span class="feature-chip"><i class="iconoir-wifi" style="font-size:12px;color:#fb8e30"></i> 5G / 4G
-              支援</span>
-            <span class="feature-chip"><i class="iconoir-smartphone-device" style="font-size:12px;color:#fb8e30"></i>
-              免換實體 SIM</span>
-            <span class="feature-chip"><i class="iconoir-headset" style="font-size:12px;color:#fb8e30"></i> 中文客服</span>
+            <span class="feature-chip"><i class="iconoir-flash icon-sm"></i> 即時開通</span>
+            <span class="feature-chip"><i class="iconoir-wifi icon-sm"></i> 5G / 4G 支援</span>
+            <span class="feature-chip"><i class="iconoir-smartphone-device icon-sm"></i> 免換實體 SIM</span>
+            <span class="feature-chip"><i class="iconoir-headset icon-sm"></i> 中文客服</span>
           </div>
         </div>
         <h2 class="text-sm font-semibold text-secondary-text uppercase tracking-wider mb-4">熱門目的地</h2>
@@ -425,7 +429,7 @@
           <div
             class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 max-w-xs md:max-w-none md:w-[30%] xl:w-[30%] text-center hover:scale-105 border border-gray-100">
             <div class="flex justify-center mb-5">
-              <i class="iconoir-globe icon-gradient" style="font-size: 3.5rem"></i>
+              <i class="iconoir-globe icon-gradient icon-xl"></i>
             </div>
 
             <h3 class="text-2xl mb-4 font-flash font-semibold text-primary-text">
@@ -440,7 +444,7 @@
           <div
             class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 max-w-xs md:max-w-none md:w-[30%] xl:w-[30%] text-center hover:scale-105 border border-gray-100">
             <div class="flex justify-center mb-5">
-              <i class="iconoir-dashboard-speed icon-gradient" style="font-size: 3.5rem"></i>
+              <i class="iconoir-dashboard-speed icon-gradient icon-xl"></i>
             </div>
             <h3 class="text-2xl mb-4 font-flash font-semibold text-primary-text">
               專屬 APP 服務
@@ -453,7 +457,7 @@
           <div
             class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 max-w-xs md:max-w-none md:w-[30%] xl:w-[30%] text-center hover:scale-105 border border-gray-100">
             <div class="flex justify-center mb-5">
-              <i class="iconoir-antenna-signal icon-gradient" style="font-size: 3.5rem"></i>
+              <i class="iconoir-antenna-signal icon-gradient icon-xl"></i>
             </div>
             <h3 class="text-2xl mb-4 font-flash font-semibold text-primary-text">
               網速穩又快
@@ -642,11 +646,10 @@
             <button onclick="toggleSection('co-product')"
               class="w-full flex items-center justify-between px-5 py-4 font-semibold text-primary-text">
               <span>商品</span>
-              <i id="co-product-icon" class="iconoir-nav-arrow-up text-gray-400" style="font-size:18px"></i>
+              <i id="co-product-icon" class="iconoir-nav-arrow-up text-gray-400 icon-md"></i>
             </button>
             <div id="co-product" class="px-5 pb-5 flex items-start gap-4">
-              <img id="co-flag" src="" alt="" class="h-10 rounded mt-0.5"
-                style="width:auto;box-shadow:0 1px 4px rgba(0,0,0,0.12)">
+              <img id="co-flag" src="" alt="" class="h-10 rounded mt-0.5 flag-img">
               <div>
                 <p class="font-bold text-primary-text" id="co-name">—</p>
                 <p class="text-sm text-secondary-text mt-0.5" id="co-detail">—</p>
@@ -670,7 +673,7 @@
                   <p class="text-xs text-secondary-text" id="co-invoice-summary">/ 個人發票</p>
                 </div>
               </div>
-              <i id="co-invoice-icon" class="iconoir-nav-arrow-right text-gray-400" style="font-size:18px"></i>
+              <i id="co-invoice-icon" class="iconoir-nav-arrow-right text-gray-400 icon-md"></i>
             </button>
             <div id="co-invoice" class="hidden px-5 pb-5 space-y-3">
               <div>
@@ -747,9 +750,9 @@
                 <p class="text-xs text-secondary-text">總付款金額</p>
                 <p class="text-2xl font-bold text-gradient-mango" id="co-total-price">NT$0</p>
               </div>
-              <button onclick="submitCheckout()"
-                class="gradient-mango text-white font-bold px-10 py-3.5 rounded-full text-base shadow-lg">
-                下一步
+              <button disabled
+                class="bg-[#FDD2AC] text-white font-bold px-10 py-3.5 rounded-full text-base cursor-not-allowed">
+                即將上市
               </button>
             </div>
           </div>
@@ -825,7 +828,7 @@
 
         <!-- 商品 -->
         <div class="bg-gray-50 rounded-xl px-4 py-4 flex items-center gap-4">
-          <img id="confirm-flag" src="" alt="" class="h-10 rounded" style="width:auto;box-shadow:0 1px 4px rgba(0,0,0,0.12)">
+          <img id="confirm-flag" src="" alt="" class="h-10 rounded flag-img">
           <div>
             <p class="font-bold text-primary-text" id="confirm-name">—</p>
             <p class="text-sm text-secondary-text" id="confirm-detail">—</p>
@@ -978,15 +981,12 @@
         <p class="text-2xl font-bold text-gradient-mango leading-tight" id="bar-price">NT$0</p>
       </div>
       
-      <button onclick="openCheckout()"
-        class="gradient-mango text-white font-bold px-8 py-3.5 rounded-full text-base whitespace-nowrap shadow-lg">
-        立即購買
+      <button disabled
+        class="bg-[#FDD2AC] text-white font-bold px-8 py-3.5 rounded-full text-base whitespace-nowrap cursor-not-allowed">
+        即將上市
       </button>
     </div>
   </div>
-
-  <!-- 綠界表單 (由後端填入後 submit) -->
-  <form id="ecpay-form" method="POST" action="" style="display:none;"></form>
 
   <script>
     // ── 商品資料 ──────────────────────────────
@@ -1107,7 +1107,7 @@
                 <div class="text-[10px] text-gray-400 mb-0.5">方案起價</div>
                 <div class="text-lg font-bold text-gradient-mango">NT$${startPrice}</div>
               </div>
-              <i class="iconoir-arrow-right card-arrow text-mango-orange-40" style="font-size:18px"></i>
+              <i class="iconoir-arrow-right card-arrow text-mango-orange-40 icon-md"></i>
             </div>
           </div>
         `;
@@ -1417,15 +1417,6 @@
       return !invalid;
     }
 
-    function selectPayment(type) {
-      const label = document.getElementById('payment-transfer-label');
-      label.style.borderColor = '#fb8e30';
-      label.style.background = '#fff8ee';
-      document.getElementById('co-bank-info').classList.remove('hidden');
-      document.getElementById('co-payment-err').classList.add('hidden');
-      document.querySelector('input[name="co-payment"]').checked = true;
-    }
-
     function submitCheckout() {
       const agree = document.getElementById('co-agree').checked;
       // 驗證所有欄位
@@ -1485,30 +1476,6 @@
       }).catch(() => {
         alert(text);
       });
-    }
-
-    function confirmRemittance() {
-      const orderId  = document.getElementById('confirm-order-id').textContent;
-      const total    = document.getElementById('confirm-total').textContent;
-      const email    = document.getElementById('co-buyer-email').value.trim();
-      const name     = document.getElementById('confirm-name').textContent;
-      const detail   = document.getElementById('confirm-detail').textContent;
-
-      const subject = encodeURIComponent(`已匯款通知 ${orderId}`);
-      const body = encodeURIComponent([
-        '【已匯款通知】',
-        '',
-        `訂單編號：${orderId}`,
-        `商品：${name} ${detail}`,
-        `金額：${total}`,
-        `聯絡信箱：${email}`,
-        '',
-        '--- 請填寫 ---',
-        '匯款帳號末 5 碼：',
-        '匯款時間：',
-      ].join('\n'));
-
-      window.open(`https://mail.google.com/mail/?view=cm&to=official@flashtele.com&su=${subject}&body=${body}`, '_blank');
     }
 
     function closeConfirm() {
