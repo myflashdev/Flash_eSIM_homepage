@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>服務條款與隱私政策 - 閃電通 eSIM</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-mango-orange: #fb8e30;
+      --color-mango-orange-80: #fca559;
+      --color-mango-orange-60: #fdbb83;
+      --color-mango-orange-40: #fdd2ac;
+      --color-mango-orange-20: #fee8d6;
+      --color-safe-black: #404040;
+      --color-mango-yellow: #ffbe40;
+      --color-warm-white: #fff8ee;
+      --color-soft-amber: #fff1db;
+      --color-primary-text: #2f2f2f;
+      --color-secondary-text: #595959;
+      --font-flash: "Rubik", "Noto Sans TC", sans-serif;
+    }
+  </style>
+
+  <style>
+    body {
+      font-family: "Rubik", "Noto Sans TC", sans-serif;
+      color: #2f2f2f;
+    }
+
+    .gradient-mango {
+      background: linear-gradient(135deg, #ffbe40 0%, #fb8e30 100%);
+    }
+
+    .text-gradient-mango {
+      background: linear-gradient(135deg, #ffbe40 0%, #fb8e30 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* TOC sidebar */
+    .toc-link {
+      display: block;
+      padding: 0.35rem 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 0.8125rem;
+      color: #595959;
+      text-decoration: none;
+      line-height: 1.5;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .toc-link:hover {
+      background: #fee8d6;
+      color: #fb8e30;
+    }
+
+    .toc-link.active {
+      background: #fee8d6;
+      color: #fb8e30;
+      font-weight: 600;
+    }
+
+    /* Section heading */
+    .section-heading {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: #fb8e30;
+      margin-bottom: 1rem;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-heading::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      min-width: 4px;
+      height: 1.1em;
+      background: linear-gradient(135deg, #ffbe40 0%, #fb8e30 100%);
+      border-radius: 2px;
+    }
+
+    /* Ordered list */
+    .policy-ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+    }
+
+    .policy-ol>li {
+      display: flex;
+      gap: 0.6rem;
+      color: #595959;
+      line-height: 1.8;
+      font-size: 0.9375rem;
+    }
+
+    .policy-ol>li .item-num {
+      flex-shrink: 0;
+      font-weight: 700;
+      color: #fb8e30;
+      min-width: 1.4rem;
+    }
+
+    /* Sub bullet list */
+    .policy-sub {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .policy-sub>li {
+      display: flex;
+      gap: 0.4rem;
+      color: #595959;
+      line-height: 1.75;
+      font-size: 0.9rem;
+    }
+
+    .policy-sub>li::before {
+      content: '·';
+      color: #fb8e30;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Bullet list (non-numbered) */
+    .policy-ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .policy-ul>li {
+      display: flex;
+      gap: 0.5rem;
+      color: #595959;
+      line-height: 1.8;
+      font-size: 0.9375rem;
+    }
+
+    .policy-ul>li::before {
+      content: '·';
+      color: #fb8e30;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Divider */
+    .policy-divider {
+      border: none;
+      border-top: 1px solid #fee8d6;
+      margin: 0;
+    }
+
+    /* Intro block */
+    .intro-block {
+      background: linear-gradient(135deg, #fff8ee 0%, #fee8d6 100%);
+      border-left: 4px solid #fb8e30;
+      border-radius: 0 0.75rem 0.75rem 0;
+      padding: 1rem 1.25rem;
+      color: #595959;
+      line-height: 1.85;
+      font-size: 0.9375rem;
+    }
+
+    /* Contact block */
+    .contact-block {
+      background: #fff8ee;
+      border: 1px solid #fee8d6;
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .contact-block a {
+      color: #fb8e30;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-block a:hover {
+      text-decoration: underline;
+    }
+
+    /* Section card */
+    .policy-section {
+      scroll-margin-top: 4rem;
+    }
+
+    /* Bold inline */
+    b,
+    strong {
+      color: #404040;
+    }
+
+    /* 漸層工具 */
+    .gradient-mango-horizontal {
+      background: linear-gradient(90deg, #ffbe40 0%, #fb8e30 100%);
+    }
+  </style>
+</head>
+
+<body class="m-0 p-0 box-border leading-relaxed text-gray-800 bg-gray-50">
+
+  <!-- Header -->
+  <header class="bg-white/90 backdrop-blur-sm shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 py-4 flex justify-center items-center">
+      <a href="../../../" class="block">
+        <svg class="h-10 w-auto p-1" viewBox="733 1040 6352 1820" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M4195 1430.07C4211.57 1430.07 4225 1443.5 4225 1460.07V1595.07C4225 1611.64 4211.57 1625.07 4195 1625.07H3735C3718.43 1625.07 3705 1638.5 3705 1655.07V1855C3705 1871.57 3718.43 1885 3735 1885H4130C4146.57 1885 4160 1898.43 4160 1915V2050C4160 2066.57 4146.57 2080 4130 2080H3735C3718.43 2080 3705 2093.43 3705 2110V2440.07C3705 2456.64 3691.57 2470.07 3675 2470.07H3540C3523.43 2470.07 3510 2456.64 3510 2440.07V1460.07C3510 1443.5 3523.43 1430.07 3540 1430.07H4195Z"
+            fill="#404040" />
+          <path
+            d="M4520 1430.07C4536.57 1430.07 4550 1443.5 4550 1460.07V2440.07C4550 2456.64 4536.57 2470.07 4520 2470.07H4385C4368.43 2470.07 4355 2456.64 4355 2440.07L4355 1460.07C4355 1443.5 4368.43 1430.07 4385 1430.07L4520 1430.07Z"
+            fill="#404040" />
+          <path
+            d="M6210 1690.07C6226.57 1690.07 6240 1703.5 6240 1720.07V1855.07C6240 1871.64 6226.57 1885.07 6210 1885.07H5890.33C5860.22 1885.07 5848.88 1924.47 5874.38 1940.48L6136.45 2104.98C6198.26 2138.14 6240.15 2202.32 6240.15 2276.07C6240.15 2382.32 6153.19 2467.73 6045 2470.07H5621C5604.43 2470.07 5590 2456.64 5590 2440.07V2305.07C5590 2288.5 5604.43 2275.07 5621 2275.07H5936.51C5966.62 2275.07 5977.96 2235.67 5952.45 2219.66L5684.44 2051.47C5626.49 2016.76 5590 1952.97 5590 1885.07C5590 1784.38 5675.84 1690.07 5779 1690.07H6210Z"
+            fill="#404040" />
+          <path
+            d="M6535 1430C6551.57 1430 6565 1443.43 6565 1460V1660C6565 1676.57 6578.43 1690 6595 1690C6693.37 1690 6791.74 1690 6890.11 1690C6995.93 1690 7082.05 1776.33 7084.93 1883.94C7084.97 1884.62 7085 1885.31 7085 1886V2440C7085 2456.57 7071.57 2470 7055 2470H6920C6903.43 2470 6890 2456.57 6890 2440C6890 2265.2 6890.02 2092.03 6890.02 1915C6890.02 1898.43 6876.59 1885 6860.02 1885H6595C6578.43 1885 6565 1898.43 6565 1915V2440C6565 2456.57 6551.57 2470 6535 2470H6400C6383.43 2470 6370 2456.57 6370 2440V1460C6370 1443.43 6383.43 1430 6400 1430H6535Z"
+            fill="#404040" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M5080 1690C5300.36 1690 5479 1864.61 5479 2080C5479 2200.02 5479 2320.05 5479 2440.07C5479 2456.64 5465.57 2470.07 5449 2470.07H5314C5297.43 2470.07 5284 2456.64 5284 2440.07C5284 2429.06 5272.01 2422.12 5262.17 2427.07C5207.56 2454.51 5145.63 2470 5080 2470C4859.64 2470 4681 2295.39 4681 2080C4681 1864.61 4859.64 1690 5080 1690ZM5080 1885C4972.3 1885 4885 1972.3 4885 2080C4885 2187.7 4972.3 2275 5080 2275C5187.7 2275 5275 2187.7 5275 2080C5275 1972.3 5187.7 1885 5080 1885Z"
+            fill="#404040" />
+          <path
+            d="M957.085 1874.16C950.363 1900.49 946.112 1928.04 946.111 1956.4C946.112 2141.05 1105.53 2291.25 1289.44 2291.25H1458.36C1463.73 2291.3 1468.18 2291.26 1471.59 2291.25C1615.25 2291.25 1758.91 2291.3 1902.58 2291.32C1929.44 2291.32 1951.45 2312.09 1953.46 2338.46C1953.55 2339.75 1953.61 2341.06 1953.61 2342.38V2808.51C1953.6 2836.71 1930.76 2860 1902.57 2860C1792.72 2860 1130.83 2860 1074.59 2860C891.11 2856.24 733 2707.24 733 2520.58C733 2487.25 745.733 2427.22 767.1 2375.25L957.085 1874.16Z"
+            fill="#FFBE40" />
+          <path
+            d="M1470.9 2291.25C1435.17 2291.25 1415.4 2260 1428.12 2226.57L1859.17 1087.73C1869.2 1061.37 1853.01 1040 1824.83 1040H1324.73C1296.55 1040 1265.02 1061.77 1254.99 1088.13L957.085 1874.16C950.359 1900.49 946.112 1928.03 946.111 1956.4C946.112 2141.05 1104.85 2291.25 1288.75 2291.25C1349.47 2291.25 1410.19 2291.45 1470.9 2291.25Z"
+            fill="url(#paint0_linear_159_296)" />
+          <path
+            d="M2895.91 2025.84C2902.64 1999.51 2906.21 1971.96 2906.21 1943.6C2906.21 1758.95 2747.47 1608.75 2563.56 1608.75H2394.64C2389.27 1608.7 2384.82 1608.74 2381.41 1608.75C2237.75 1608.75 2094.09 1608.7 1950.42 1608.68C1923.56 1608.68 1901.55 1587.91 1899.54 1561.54C1899.45 1560.25 1899.39 1558.94 1899.39 1557.62V1091.49C1899.4 1063.29 1922.24 1040 1950.43 1040C2060.28 1040 2722.17 1040 2778.41 1040C2961.89 1043.76 3120 1192.76 3120 1379.42C3120 1412.75 3107.27 1472.78 3085.9 1524.75L2895.91 2025.84Z"
+            fill="#FFBE40" />
+          <path
+            d="M2395.33 1608.75C2389.95 1608.7 2385.5 1608.74 2382.1 1608.75C2417.83 1608.75 2437.6 1640 2424.88 1673.43L1993.83 2812.27C1983.8 2838.63 1999.99 2860 2028.17 2860H2528.27C2556.45 2860 2587.98 2838.23 2598.01 2811.87L2895.91 2025.84C2902.64 1999.5 2906.21 1972.16 2906.21 1943.78C2906.21 1759.13 2748.15 1608.75 2564.25 1608.75H2395.33Z"
+            fill="url(#paint1_linear_159_296)" />
+          <defs>
+            <linearGradient id="paint0_linear_159_296" x1="1924.5" y1="1540.88" x2="1996.64" y2="2382.31"
+              gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFBE40" />
+              <stop offset="1" stop-color="#FB8E30" />
+            </linearGradient>
+            <linearGradient id="paint1_linear_159_296" x1="2510.72" y1="2359.12" x2="2372.49" y2="1534.68"
+              gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFBE40" />
+              <stop offset="1" stop-color="#FB8E30" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <div class="h-[10px] w-full gradient-mango-horizontal"></div>
+
+  <!-- Hero -->
+  <div class="max-w-6xl mx-auto px-4 pt-12 pb-2 text-center">
+    <p class="text-mango-orange text-xs font-medium tracking-widest uppercase mb-3">FlashTele eSIM</p>
+    <h1 class="text-4xl font-flash font-bold text-gradient-mango mb-3">服務條款與隱私政策</h1>
+    <p class="text-secondary-text text-sm">Terms of Service · Privacy Policy · R-0.3</p>
+    <p class="text-[#999] text-xs mt-2">最後更新：2025 年 4 月 8 日</p>
+  </div>
+
+  <!-- Layout -->
+  <div class="max-w-6xl mx-auto px-4 py-10 flex gap-8 items-start">
+
+    <!-- TOC sidebar (desktop) -->
+    <aside class="hidden lg:block w-56 shrink-0 sticky top-20">
+      <div class="bg-white rounded-3xl border border-gray-100 shadow-xl p-4">
+        <p class="text-xs font-bold text-[#fb8e30] uppercase tracking-widest mb-3 px-1">目錄</p>
+        <nav class="flex flex-col gap-0.5">
+          <a href="#intro" class="toc-link">前言</a>
+          <a href="#s1" class="toc-link">一、消費者權益</a>
+          <a href="#s2" class="toc-link">二、商品資訊與交易安全</a>
+          <a href="#s3" class="toc-link">三、人性化服務</a>
+          <a href="#s4" class="toc-link">四、個資保護</a>
+          <a href="#s5" class="toc-link">五、產品安全檢測</a>
+          <a href="#s6" class="toc-link">六、身份驗證與 AI 客服</a>
+          <a href="#s7" class="toc-link">七、信用評分</a>
+          <a href="#s8" class="toc-link">八、技術支援</a>
+          <a href="#s9" class="toc-link">九、網路品質免責</a>
+          <a href="#s10" class="toc-link">十、禁止惡意攻擊</a>
+          <a href="#s11" class="toc-link">十一、消費爭議</a>
+          <a href="#s12" class="toc-link">十二、行銷活動</a>
+          <a href="#s13" class="toc-link">十三、ESG 永續</a>
+          <a href="#s14" class="toc-link">十四、聯繫管道</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="flex-1 min-w-0">
+      <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+
+        <!-- Intro -->
+        <div id="intro" class="p-6 md:p-10 policy-section">
+          <div class="intro-block">
+            親愛的旅客您好，為了確保您的行程順暢，eSIM
+            屬於<strong>「交付即完成」</strong>之數位商品。本公司致力於提供產品的完整性與優良的服務品質，但在技術日新月異與跨國通訊環境中，若有任何未臻完善之處，我們誠摯邀請您提供寶貴建議。本公司將秉持「人性化服務」為核心，持續精進並致力於協助每一位旅客。
+          </div>
+        </div>
+
+        <hr class="policy-divider">
+
+        <!-- 一 -->
+        <section id="s1" class="p-6 md:p-10 policy-section">
+          <h2 class="section-heading">一、消費者權益與服務承諾</h2>
+          <ol class="policy-ol">
+            <li><span class="item-num">1.</span><span><strong>服務知情權：</strong>消費者有權於官方網站與官方 App
+                上查閱最即時的產品規格、使用指南及資費說明。本公司承諾維持資訊的透明度，若有任何疑問，消費者可透過官方管道要求進一步說明。</span></li>
+            <li><span
+                class="item-num">2.</span><span><strong>個人資料自主權：</strong>依據隱私權保護法，消費者有權要求查詢、閱覽其個人資料，或要求本公司停止蒐集、處理、利用或刪除特定個資（法律規定必須保存之交易紀錄除外）。</span>
+            </li>
+            <li><span
+                class="item-num">3.</span><span><strong>公平申訴權：</strong>當消費者認為其權益受損時，有權透過官方渠道提出申訴。本公司承諾將由專人依內部標準作業程序（SOP）進行案件受理與回覆。</span>
+            </li>
+            <li><span
+                class="item-num">4.</span><span><strong>積極處置保障：</strong>針對產品瑕疵，本公司會盡量協助處理或以補發等方式，以便消費者能於第一時間順利使用。</span>
+            </li>
+            <li><span
+                class="item-num">5.</span><span><strong>異常補償機制：</strong>若經查核確認服務中斷為本公司或配合之電信商端技術瑕疵，且於合理處理時間內無法修復，本公司除按比例辦理退費外，將視具體個案情況給予補償（如未來訂單折扣碼），以保障消費者之服務體驗。</span>
+            </li>
+            <li><span
+                class="item-num">6.</span><span><strong>服務品質異動處理：</strong>若因不可抗力或供應商變更，導致產品規格與原購買內容有顯著不利之差異時，本公司將第一時間協助消費者得選擇接受優化方案或要求按未使用天數比例補償。</span>
+            </li>
+            <li><span class="item-num">7.</span><span><strong>數位商品性質聲明：</strong>消費者理解並同意，eSIM
+                序號一經發出即視為服務已完成。依據《通訊交易解除權合理例外情事適用準則》，本商品不適用 7 天鑑賞期制度。</span></li>
+          </ol>
+        </section>
+
+        <hr class="policy-divider">
+
+        <!-- 二 -->
+        <section id="s2" class="p-6 md:p-10 policy-section">
+          <h2 class="section-heading">二、商品資訊、定價規範與交易安全</h2>
+          <ol class="policy-ol">
+            <li><span class="item-num">1.</span><span><strong>主動告知與諮詢義務：</strong>消費者於購買前應自行詳閱相關資訊；若有任何不清楚之處，應主動詢問 AI
+                客服或真人客服以排除疑問。</span></li>
+            <li><span
+                class="item-num">2.</span><span><strong>定價判定標準：</strong>消費者應支付之款項以交易頁面上最終顯示之金額為主。一旦完成支付，即視為雙方已就交易金額達成合意。</span>
+            </li>
+            <li><span
+                class="item-num">3.</span><span><strong>金額差異核對程序：</strong>若發生訂單顯示金額與實際支付金額不符之情況，消費者需先自行與金流端（如銀行、支付平台）確認扣款明細與換匯資訊，並將相關證明資料提供給本公司客服人員，以便本公司與金流單位確認金額異常原因。</span>
+            </li>
+            <li><span class="item-num">4.</span><span><strong>裝置相容性責任：</strong>消費者應於購買前確認裝置具備 eSIM
+                功能且未受電信商鎖定。若因裝置不相容、作業系統過舊或硬體故障導致無法使用，視為消費者個人因素。</span></li>
+            <li><span class="item-num">5.</span><span><strong>交易安全保護：</strong>所有支付流程均受國際加密標準保護，確保消費者交易環境之安全性。</span>
+            </li>
+            <li><span
+                class="item-num">6.</span><span><strong>跨境交易提醒：</strong>因金流處理可能涉及海外交易手續費或換匯差價，最終扣款金額依消費者持有信用卡之銀行帳單為準。</span>
+            </li>
+            <li>
+              <span class="item-num">7.</span>
+              <span>
+                <strong>第三方支付使用規則：</strong>
+                <ul class="policy-sub">
+                  <li><strong>服務範疇：</strong>本公司支援如 LINE Pay、Apple Pay、Google Pay
+                    等第三方支付工具。消費者使用上述工具時，除須遵守本服務條款外，亦應遵守該第三方支付平台之使用者合約與規範。</li>
+                  <li><strong>退款路徑與時效：</strong>若產生退款需求，本公司將透過原第三方支付管道進行退回申請。退款處理進度受限於各支付平台之結算作業流程與銀行處理時程。</li>
+                  <li>
+                    <strong>交易失敗處理：</strong>若因網路波動、驗證失敗或系統逾時導致「交易失敗」或「授權未成功」，第三方支付平台可能會先產生「佔用額度」或「預授權紀錄」。此類情況並未實質完成扣款，相關額度將由支付平台或發卡銀行在各機構規定之作業時間內自動釋回（通常為數小時至數個工作日），本公司無權亦無法手動加速此釋回流程。
+                  </li>
+                  <li>
+                    <strong>後續查詢義務：</strong>針對第三方支付之退款進度或授權釋回結果，消費者可逕行至所屬銀行（網路銀行／App）或該支付平台（交易紀錄明細）進行對帳與查詢，最終入帳資訊均以金融機構之紀錄為準。
+                  </li>
+                  <li><strong>優惠與點數：</strong>透過第三方支付所獲得之點數（如 LINE POINTS）、優惠券或回饋金之折抵與退還規則，均依該支付平台之規範辦理，本公司無法直接提供點數回補服務。
+                  </li>
+                  <li><strong>換匯與手續費：</strong>若使用跨境第三方支付工具，該平台可能產生之換匯溢價或跨境交易手續費，均由支付平台與發卡行決定，消費者應自行承擔。</li>
+                </ul>
+              </span>
+            </li>
+          </ol>
+        </section>
+
+        <hr class="policy-divider">
+
+        <!-- 三 -->
+        <section id="s3" class="p-6 md:p-10 policy-section">
+          <h2 class="section-heading">三、人性化服務、公平原則與誠信維護</h2>
+          <ol class="policy-ol">
+            <li><span
+                class="item-num">1.</span><span><strong>誠信與名譽維護：</strong>消費者應遵守誠信原則。若有欺瞞或騷擾客服行為，本公司會根據案件評估，嚴重者將拒絕受理申請並保留法律追訴權。</span>
+            </li>
+            <li><span
+                class="item-num">2.</span><span><strong>產品作業自主權：</strong>服務或產品之優化調整均依照本公司內部流程作業為主，不負有逐一另行公告之義務。</span>
+            </li>
+            <li><span
+                class="item-num">3.</span><span><strong>人性化服務與評分誠信機制：</strong>本公司以「人性化服務」為核心要點，並在服務完成後邀請消費者進行評分確認以改進品質。惟消費者應基於事實進行評核，嚴禁惡意刷分或提供與事實不符之評價；若系統偵測到此類異常行為，將會連動調整該消費者之內部信用評分，請消費者務必避免此行為。</span>
+            </li>
+            <li><span
+                class="item-num">4.</span><span><strong>平等與非歧視政策：</strong>本公司秉持公平原則，致力於提供多元與包容的服務環境。我們承諾，絕不因消費者的種族、膚色、國籍、宗教信仰、性別、性傾向、年齡、婚姻狀況、身心障礙、或其所屬之社會與文化背景等任何因素而有差別對待或歧視行為。所有消費者在
+                FlashTele 皆享有平等的服務獲取權與尊嚴。</span></li>
+            <li><span
+                class="item-num">5.</span><span><strong>申訴個資保護：</strong>本公司承諾對消費者申訴過程中所提供之個人隱私、對話紀錄及申訴內容負有絕對保密責任，確保消費者在申訴過程中不受任何形式之壓力或隱私洩漏。</span>
+            </li>
+          </ol>
+        </section>
+
+        <hr class="policy-divider">
+
+        <!-- 四 -->
+        <section id="s4" class="p-6 md:p-10 policy-section">
+          <h2 class="section-heading">四、官方溝通規範、個資保護與商業機密維護</h2>
+          <ol class="policy-ol">
+            <li><span
+                class="item-num">1.</span><span><strong>官方溝通唯一原則：</strong>本公司內部人員不會主動私下聯繫消費者，亦不會要求提供個人聯絡方式。所有通知皆依照官方平台進行。</span>
+            </li>
+            <li><span
+                class="item-num">2.</span><span><strong>異常行為檢舉：</strong>若有本公司人員私下騷擾或聯繫，消費者可提供資料於官方管道，本公司將依照內部人員規範流程進行處置。</span>
+            </li>
+            <li><span
+                class="item-num">3.</span><span><strong>個人資料保護：</strong>本公司嚴格保護消費者個資，蒐集、處理及利用均符合相關法律規範，確保消費者隱私安全。</span>
+            </li>
+            <li><span class="item-num">4.</span><span><strong>品牌資產保護規範：</strong>未經本公司正式書面授權或許可，嚴禁任何個人或組織擅自使用 FlashTele
+                之商標（LOGO）、品牌名稱、官方圖文內容進行宣傳、廣告、銷售或任何形式之二次創作行為（包含但不限於修改、重組或商業衍生應用）。</span></li>
+            <li><span
+                class="item-num">5.</span><span><strong>商業行為限制：</strong>特別針對涉及商業利益之推廣、營利行為或具備商業性質之二創展示，若未獲得本公司明確授權，均視為侵犯智慧財產權。本公司保留撤銷授權、要求移除內容及追究法律責任與損害賠償之權利。</span>
+            </li>
+            <li><span
+                class="item-num">6.</span><span><strong>商業機密維護：</strong>內部作業邏輯與協議屬本公司重要資產，請予以尊重。為維護品牌名譽，請避免散布未經證實之不實對話。</span>
+            </li>
+            <li><span class="item-num">7.</span><span><strong>個資處理時效：</strong>收到刪除申請後，除法令規定須保存之憑證外，將於 30
+                日內完成系統數據清理。</span></li>
+          </ol>
+        </section>
+
+        <hr class="policy-divider">
+
+        <!-- 五 -->
+        <section id="s5" class="p-6 md:p-10 policy-section">
+          <h2 class="section-heading">五、產品安全檢測、品質把關與內部流程 <span class="text-sm font-normal text-[#595959]">(ESG - Product
+              Responsibility)</span></h2>
+          <ol class="policy-ol">
+            <li><span class="item-num">1.</span><span><strong>數位產品品質驗證（Product Validation）：</strong>為了確保每一份 eSIM
+                方案的穩定連線，本公司針對內部產品執行不定時的自動化品質驗證。這包含對各國電信配置（Profile）的有效性測試，以及對下載伺服器（SM-DP+）的存取穩定性監測，確保交付至消費者手中的 QR Code
+                具備高度的可用性與即時性。</span></li>
+            <li><span class="item-num">2.</span><span><strong>安全性與數據加密協議（Security &amp;
+                  Encryption）：</strong>本公司致力於守護用戶的數位安全。所有 eSIM 數據在生成與傳輸過程中，均採用符合
+                GSMA（全球行動通信系統協會）標準的安全加密協議，並對內部存取權限進行嚴格控制。透過不定時的安全漏洞掃描，防範數據在發送過程中遭到竄改或盜取，確保數位內容的純淨與安全。</span></li>
+            <li><span class="item-num">3.</span><span><strong>多維度裝置相容性測試（Cross-Device
+                  Compatibility）：</strong>本公司針對市面上主流作業系統（iOS,
+                Android）及不同品牌之行動裝置執行模擬環境測試。透過定期的技術校對，更新支援設備清單，最大限度地降低因裝置系統版本差異導致的安裝失敗風險，實踐對產品可靠性的企業社會責任。</span></li>
+            <li><span class="item-num">4.</span><span><strong>供應商合規與標準查核（Supplier
+                  Compliance）：</strong>我們對合作之全球電信商進行嚴謹的品質評估。除了確保網路覆蓋率外，亦要求合作夥伴遵循國際資安標準。透過內部預防性技術檢核流程，我們在產品上線前即進行初步過濾，致力於將潛在的技術瑕疵與通訊風險降至最低。</span>
+            </li>
+          </ol>
+        </section>
+
+        <hr class="policy-divider">
+
+        <!-- 六 -->
+        <section id="s6" class="p-6 md:p-10 policy-section">
+          <h2 class="section-heading">六、身份驗證、交易監測與 AI 客服服務邊界</h2>
+          <ol class="policy-ol">
+            <li><span
+                class="item-num">1.</span><span><strong>多重安全驗證機制：</strong>為防止信用卡盜刷並保障用戶帳戶安全，本公司金流系統設有自動化風險檢測。若偵測到異常交易環境（如
+                IP 異常、頻繁交易失敗等）或疑似盜用情事，本公司有權要求消費者配合進一步之身份核對（包括但不限於證件遮蔽核對、刷卡授權碼提供等）。</span></li>
+            <li><span
+                class="item-num">2.</span><span><strong>驗證資料之隱私保障：</strong>所有因資安審核而產生的驗證資料（如證件照片、授權碼等），僅供當次身分確認使用。本公司承諾於核對確認後，將立即依照資安規範進行封存或銷毀，絕不挪作他用，確保您的隱私安全。</span>
+            </li>
+            <li><span
+                class="item-num">3.</span><span><strong>資料使用範圍聲明：</strong>上述所有驗證資料及個人資料僅限本公司內部相關單位因資安或服務需求使用，絕不會提供給任何第三方或非相關單位查閱、利用或散布，確保您的個人資料在封閉且安全的環境下受到保護。</span>
+            </li>
+            <li><span class="item-num">4.</span><span><strong>AI 客服定位與持續進化：</strong>本公司之 AI
+                客服（含自動回覆系統與智慧助理）係基於既有知識庫提供即時、一般性之操作建議。為了追求卓越的服務體驗，本公司將對 AI 系統進行不定時的學習更新與功能優化，以提供更精準、更具溫度的數位服務。</span>
+            </li>
+            <li><span class="item-num">5.</span><span><strong>服務不足之反饋與優化：</strong>本公司非常重視每一位消費者的使用感受。若消費者在與 AI
+                客服互動過程中，感受到服務不足或有待改進之處，誠摯歡迎透過官方渠道提供寶貴建議；消費者的反饋將成為本公司系統迭代與優化服務品質的核心依據。</span></li>
+            <li><span class="item-num">6.</span><span><strong>AI 服務邊界與真人支援：</strong>消費者理解 AI
+                客服之性質屬於「輔助性工具」，其產出之內容不構成本公司最終法律承諾。針對複雜技術排障、金額退還判定、或合約條款解釋等涉及實質權利義務之需求，應以本公司「真人客服」或官方書面回覆之最終判定為準。</span>
+            </li>
+          </ol>
+        </section>
+
+        <hr class="policy-divider">
+
+        <!-- 七 -->
+        <section id="s7" class="p-6 md:p-10 policy-section">
+          <h2 class="section-heading">七、內部信用評分、風險控管與服務限制</h2>
+          <ol class="policy-ol">
+            <li><span
+                class="item-num">1.</span><span><strong>信用評分基準：</strong>本公司建立之內部信用評分機制，係基於消費者之交易誠信、服務使用行為（如：頻繁惡意刷退、流量異常使用）、溝通品質（如：騷擾或侮辱同仁）、及法律合規性進行綜合評估。</span>
+            </li>
+            <li><span
+                class="item-num">2.</span><span><strong>異常行為認定：</strong>包括但不限於：多次利用技術漏洞獲取不當優惠、提供虛假申訴事證、違反保密義務散布內部資訊、或對本公司品牌名譽造成實質損害之行為。</span>
+            </li>
+            <li>
+              <span class="item-num">3.</span>
+              <span>
+                <strong>分級限制處置：</strong>針對信用評分異常之客戶，本公司有權採取以下措施：
+                <ul class="policy-sub">
+                  <li>限制特定高階產品或促銷方案之購買。</li>
+                  <li>暫停或取消會員帳號之特定服務權限。</li>
+                  <li>強化交易身分審核流程（加強版 KYC）。</li>
+                  <li>情節嚴重者，本公司保留終止所有服務及拒絕未來交易之權利。</li>
+                  <li>凡涉及暫停或取消會員帳號之處分，本公司將留存事實證據並告知受限原因。</li>
+                </ul>
+              </span>
+            </li>
+            <li><span
+                class="item-num">4.</span><span><strong>即時停止權：</strong>若消費者之行為經本公司專業判定具有資安威脅、系統破壞意圖或違反公平使用原則，本公司有權無需事先通知即逕行暫停、限制或終止該帳號或
+                eSIM 服務，且不負任何賠償或退款義務。</span></li>
+          </ol>
+        </section>
+
+        <hr class="policy-divider">
+
+        <!-- 八 -->
+        <section id="s8" class="p-6 md:p-10 policy-section">
+          <h2 class="section-heading">八、技術支援、處理時間與溝通義務</h2>
+          <ol class="policy-ol">
+            <li>
+              <span class="item-num">1.</span>
+              <span>
+                <strong>工作時間之定義與多維度限制：</strong>本公司之技術查核、財務核帳與爭議處理受限於全球電信架構之複雜性，請消費者理解並耐心配合以下規範：
+                <ul class="policy-sub">
+                  <li>
+                    <strong>全球時區與法定假日：</strong>「工作時間」之計算除參考本公司營運所在地外，尚須對接目的地國家供應商（電信商）之法定假日（如：各國春節、聖誕假期、齋戒月、當地國慶等）。凡遇目的地國家之非工作日，技術排障與數據查核將自動順延。
+                  </li>
+                  <li><strong>供應商維護與作業週期：</strong>電信商機房之定期維護、突發性線路故障修復，或跨國數據調取（Log 調閱），皆需配合第三方供應商之內部流程與回覆週期（通常為 24 至 72
+                    小時不等）。</li>
+                  <li><strong>金流結算限制：</strong>涉及退款審核、扣款核對等財務作業，必須配合全球銀行系統與金流平台（如 Stripe, PayPal,
+                    各發卡行）之結算營業日。非營業時間（含週末與銀行假日）將無法進行實質之金額變動操作。</li>
+                  <li><strong>工作時間與處理效率：</strong>針對服務中斷之瑕疵案件，本公司承諾於受理後之合理工作時數內提供初步排障方案。若因跨國供應商因素導致排障時間超過 24
+                    小時仍無法恢復基本通訊功能，消費者得依本條款第一條第 6 項要求按比例退費。</li>
+                </ul>
+              </span>
+            </li>
+            <li>
+              <span class="item-num">2.</span>
+              <span>
+                <strong>排障配合義務與失效判定：</strong>
+                <ul class="policy-sub">
+                  <li><strong>遠端技術指引：</strong>由於 eSIM 屬遠端配置服務，故障查核高度依賴消費者提供之即時資訊。消費者應依客服指引提供必要事證（如：行動數據設定截圖、漫遊開關狀態、APN
+                    設定、實體卡槽狀態等）。</li>
+                  <li><strong>責任釐清障礙：</strong>若因消費者主觀拒絕配合排障流程，導致本公司無法於技術上釐清責任歸屬時，本公司得根據現有事證判定損害責任，並保留拒絕受理之權利。</li>
+                </ul>
+              </span>
+            </li>
+            <li>
+              <span class="item-num">3.</span>
+              <span>
+                <strong>溝通先行義務與處理優先序：</strong>
+                <ul class="policy-sub">
+                  <li>
+                    <strong>即時反映原則：</strong>若產品於使用過程中發生異常，消費者應優先主動與本公司官方客服聯繫。若消費者未曾聯繫反映或未給予本公司合理之排障機會即要求退費，本公司將認定產品於服務期間正常運作。
+                  </li>
+                  <li><strong>處理排序：</strong>本公司客服將依案件性質與接收時間依序處理。針對涉及人身安全之緊急通訊需求，本公司具備案件處理優先序之最終裁量權。</li>
+                </ul>
+              </span>
+            </li>
+          </ol>
+        </section>
+
+        <hr class="policy-divider">
+
+        <!-- 九 -->
+        <section id="s9" class="p-6 md:p-10 policy-section">
+          <h2 class="section-heading">九、網路品質與訊號免責聲明</h2>
+          <ol class="policy-ol">
+            <li><span
+                class="item-num">1.</span><span><strong>網路訊號免責：</strong>品質依目的地電信商配置為主。因地形、天氣等不可抗力因素導致訊號不穩，恕不補償。</span>
+            </li>
+            <li><span class="item-num">2.</span><span><strong>流量統計基準：</strong>流量統計以本公司後台系統紀錄為唯一判定基準；裝置統計數據僅供參考。</span>
+            </li>
+            <li><span
+                class="item-num">3.</span><span><strong>不可抗力因素：</strong>通訊服務受跨國海纜、當地電信設施維護、衛星狀況、氣候、地形及當地政府法令（如斷網令）等不可抗力因素影響。如因上述非本公司可控之因素導致之連線中斷或品質下降，本公司概不負賠償責任。</span>
+            </li>
+            <li><span class="item-num">4.</span><span><strong>FUP 溝通輔助：</strong>當消費者因公平使用原則 (FUP)
+                受限制時，本公司將主動代表消費者與電信商溝通，提供降速原因與建議使用方案，協助消費者恢復正常通訊。</span></li>
+            <li><span
+                class="item-num">5.</span><span><strong>流量異議核對協助：</strong>若消費者對流量扣抵量有嚴重疑慮，本公司將代表消費者向供應商提出統計核對申請，並在取得官方數據後告知消費者消耗原因。</span>
+            </li>
+            <li><span class="item-num">6.</span><span><strong>FUP 執行主體聲明：</strong>公平使用原則 (FUP)
+                之速限措施係由目的地電信商直接控管。若消費者因流量異常消耗受限，本公司雖將盡力協助溝通，但無法保證能解除該電信商之自動化管控。</span></li>
+            <li><span
+                class="item-num">7.</span><span><strong>當地政策限制說明：</strong>各國（特別是特定國家或地區）之網際網路政策與法規差異巨大，若因目的地國家之法令、網路防火牆或政策審查，導致部分網站、App
+                或通訊軟體無法開啟或無法正常使用，此屬「當地政府政策限制」而非本產品之功能瑕疵或技術限制。本公司概不對因當地法規環境所導致之存取障礙負賠償或退款責任。</span></li>
+          </ol>
+        </section>
+
+        <hr class="policy-divider">
+
+        <!-- 十 -->
+        <section id="s10" class="p-6 md:p-10 policy-section">
+          <h2 class="section-heading">十、禁止惡意攻擊與法律追責</h2>
+          <ol class="policy-ol">
+            <li>
+              <span class="item-num">1.</span>
+              <span>
+                <strong>惡意攻擊定義：</strong>本條款所稱之惡意攻擊行為，係指任何意圖或實際破壞、干擾、入侵、癱瘓本公司系統之行為。包括但不限於：
+                <ul class="policy-sub">
+                  <li>分散式阻斷服務攻擊（DDoS）或任何形式之大量流量灌爆攻擊。</li>
+                  <li>利用自動化程式（Bot／Script）大量發送請求，導致伺服器負荷異常。</li>
+                  <li>惡意漏洞掃描、嘗試入侵資料庫或系統權限之破譯。</li>
+                  <li>封包竄改（Packet Modification）或攔截金流訊號嘗試進行虛假交易。</li>
+                  <li>散布或上傳包含病毒、木馬或其他惡意軟體之程式碼。</li>
+                </ul>
+              </span>
+            </li>
+            <li><span class="item-num">2.</span><span><strong>資安保護義務：</strong>嚴禁以任何上述技術手段對本公司金流、資料庫發動攻擊。</span></li>
+            <li><span
+                class="item-num">3.</span><span><strong>懲罰性賠償：</strong>針對惡意攻擊行為，本公司將保留法律追訴權，並請求包含營業損失、資安修復成本、律師費用與商譽損害之賠償。</span>
+            </li>
+          </ol>
+        </section>
+
+        <hr class="policy-divider">
+
+        <!-- 十一 -->
+        <section id="s11" class="p-6 md:p-10 policy-section">
+          <h2 class="section-heading">十一、消費爭議處理、賠償上限與處置效力</h2>
+          <ol class="policy-ol">
+            <li><span
+                class="item-num">1.</span><span><strong>判定權屬與舉證義務：</strong>關於退款或補償方案之判定，由本公司、金流單位及供應商核實技術數據為依據。消費者應配合提供必要截圖作為核對事證。</span>
+            </li>
+            <li><span
+                class="item-num">2.</span><span><strong>賠償上限評估：</strong>發生爭議時，本公司會依法規、契約義務及產品責任保險綜合評估。除因本公司故意或重大過失所致之損害外，本公司賠償責任最高以「該筆交易實際支付之金額」為基準。對於消費者之間接損害（如：飯店或機票損失、行程延誤、利潤損失、商譽損害或其他非直接性損害），本公司概不負補償或賠償責任。</span>
+            </li>
+            <li><span
+                class="item-num">3.</span><span><strong>官方回覆效力與終止：</strong>處置結果僅透過官方渠道回覆。除重大異常狀況外，該官方回覆即為本案之最終處理結果，本公司不接受針對同一案件之重複申訴。若非經由官方渠道所發出之退款承諾（如：第三方論壇言論、非官方授權人員之私下應允），本公司一律不予採認且不具法律效力。</span>
+            </li>
+            <li><span
+                class="item-num">4.</span><span><strong>管轄法院：</strong>若因本服務產生之爭議未能透過協商解決，雙方同意以台灣台北地方法院為第一審管轄法院。但法律另有專屬管轄或強制管轄之規定者（如消費者保護法之規定），從其規定。</span>
+            </li>
+            <li><span
+                class="item-num">5.</span><span><strong>代購與非授權管道免責：</strong>凡透過非本公司官方管道購買之產品，其產生的交易糾紛、退費需求或技術問題，本公司一律拒絕受理。消費者應自行承擔向非官方渠道購票之風險。</span>
+            </li>
+            <li><span
+                class="item-num">6.</span><span><strong>合意結案之效力：</strong>凡經雙方確認之最終處置方案，無論為退款、補發或補償，一經執行即視為雙方已就該爭議達成和解，消費者同意不再就同一案件提起後續申訴或法律主張。</span>
+            </li>
+            <li><span
+                class="item-num">7.</span><span><strong>處理時程認知：</strong>跨境技術檢查與銀行退款流程涉及多方機構，需些許作業日進行。本公司人員將主動追蹤進度，消費者亦得隨時向客服人員詢問案件處理狀態，本公司承諾將盡力協調各單位限制並協助加速處理流程。</span>
+            </li>
+            <li><span class="item-num">8.</span><span><strong>金流退費時效：</strong>經確認核可之退款需求，本公司將於 7
+                個工作日內（不包含例假日）完成系統端退款發起。實際入帳日依各銀行與金流商規範為準，請消費者依銀行結帳日查閱帳單。</span></li>
+          </ol>
+        </section>
+
+        <hr class="policy-divider">
+
+        <!-- 十二 -->
+        <section id="s12" class="p-6 md:p-10 policy-section">
+          <h2 class="section-heading">十二、行銷活動與最終解釋權</h2>
+          <ol class="policy-ol">
+            <li><span
+                class="item-num">1.</span><span><strong>優惠適用規範：</strong>所有行銷活動均設有特定期限與條件。優惠不得合併使用、不得兌換現金，且不可轉讓。</span>
+            </li>
+            <li><span class="item-num">2.</span><span><strong>行為濫用禁止：</strong>嚴禁利用技術漏洞獲取行銷獎勵。若有濫用，本公司有權撤銷優惠並追還差額。</span>
+            </li>
+            <li><span
+                class="item-num">3.</span><span><strong>資訊確認義務：</strong>若對於任何行銷圖文、文案或活動內容有不清楚、解讀落差或有爭議之處，消費者應於參加前主動與客服人員進行確認；一切行銷活動細節與規則，均以本公司最新公告與最終解釋為準。</span>
+            </li>
+            <li><span class="item-num">4.</span><span><strong>調整權限：</strong>本公司保留隨時修改、終止、變更行銷活動細節之權利。</span></li>
+            <li><span class="item-num">5.</span><span><strong>條款更新效力：</strong>本公司保有隨時修改、更新本服務條款之權利。修改內容自公告於官網或 App
+                之日起生效。消費者於公告後繼續使用本服務者，視為同意受新版條款之約束。</span></li>
+          </ol>
+        </section>
+
+        <hr class="policy-divider">
+
+        <!-- 十三 -->
+        <section id="s13" class="p-6 md:p-10 policy-section">
+          <h2 class="section-heading">十三、ESG 永續經營聲明</h2>
+          <p class="text-[#595959] leading-[1.85] text-[0.9375rem] mb-4">
+            FlashTele 致力於落實永續發展目標（SDGs）。透過推廣 eSIM
+            數位虛擬卡技術，我們共同減少了實體塑膠卡片的製造與包裝廢棄物，大幅降低跨境運輸帶來的碳足跡。我們致力於打造一個環境友善（Environmental）、社會包容（Social）與透明治理（Governance）的數位通訊平台，誠摯邀請您與我們一起守護地球。
+          </p>
+          <div class="intro-block">
+            <strong>持續進步與反饋：</strong>本公司承諾持續提升產品與服務之完整性。若發現任何服務不足之處，我們深感抱歉並誠摯邀請您提出建議。每一份意見都將被重視，本公司也會根據提供之建議進行反饋，或視情況回饋給消費者，以感謝協助
+            FlashTele 變得更好。
+          </div>
+        </section>
+
+        <hr class="policy-divider">
+
+        <!-- 十四 -->
+        <section id="s14" class="p-6 md:p-10 policy-section">
+          <h2 class="section-heading">十四、聯繫與申訴管道</h2>
+          <div class="contact-block">
+            <div class="flex items-center gap-3 text-[0.9375rem] text-[#595959]">
+              <span class="text-lg">✉️</span>
+              <span><strong>客服信箱：</strong><a href="mailto:crm@flashtele.com">crm@flashtele.com</a></span>
+            </div>
+            <div class="flex items-center gap-3 text-[0.9375rem] text-[#595959]">
+              <span class="text-lg">💬</span>
+              <span><strong>客服官方 LINE：</strong><a href="https://line.me/R/ti/p/@flashtele" target="_blank"
+                  rel="noopener">@flashtele</a></span>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-warm-white py-10 text-center mt-4">
+    <div class="flex justify-center mb-6">
+      <svg class="h-8 w-auto" viewBox="733 1040 6352 1820" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M4195 1430.07C4211.57 1430.07 4225 1443.5 4225 1460.07V1595.07C4225 1611.64 4211.57 1625.07 4195 1625.07H3735C3718.43 1625.07 3705 1638.5 3705 1655.07V1855C3705 1871.57 3718.43 1885 3735 1885H4130C4146.57 1885 4160 1898.43 4160 1915V2050C4160 2066.57 4146.57 2080 4130 2080H3735C3718.43 2080 3705 2093.43 3705 2110V2440.07C3705 2456.64 3691.57 2470.07 3675 2470.07H3540C3523.43 2470.07 3510 2456.64 3510 2440.07V1460.07C3510 1443.5 3523.43 1430.07 3540 1430.07H4195Z"
+          fill="#404040" />
+        <path
+          d="M4520 1430.07C4536.57 1430.07 4550 1443.5 4550 1460.07V2440.07C4550 2456.64 4536.57 2470.07 4520 2470.07H4385C4368.43 2470.07 4355 2456.64 4355 2440.07L4355 1460.07C4355 1443.5 4368.43 1430.07 4385 1430.07L4520 1430.07Z"
+          fill="#404040" />
+        <path
+          d="M6210 1690.07C6226.57 1690.07 6240 1703.5 6240 1720.07V1855.07C6240 1871.64 6226.57 1885.07 6210 1885.07H5890.33C5860.22 1885.07 5848.88 1924.47 5874.38 1940.48L6136.45 2104.98C6198.26 2138.14 6240.15 2202.32 6240.15 2276.07C6240.15 2382.32 6153.19 2467.73 6045 2470.07H5621C5604.43 2470.07 5590 2456.64 5590 2440.07V2305.07C5590 2288.5 5604.43 2275.07 5621 2275.07H5936.51C5966.62 2275.07 5977.96 2235.67 5952.45 2219.66L5684.44 2051.47C5626.49 2016.76 5590 1952.97 5590 1885.07C5590 1784.38 5675.84 1690.07 5779 1690.07H6210Z"
+          fill="#404040" />
+        <path
+          d="M6535 1430C6551.57 1430 6565 1443.43 6565 1460V1660C6565 1676.57 6578.43 1690 6595 1690C6693.37 1690 6791.74 1690 6890.11 1690C6995.93 1690 7082.05 1776.33 7084.93 1883.94C7084.97 1884.62 7085 1885.31 7085 1886V2440C7085 2456.57 7071.57 2470 7055 2470H6920C6903.43 2470 6890 2456.57 6890 2440C6890 2265.2 6890.02 2092.03 6890.02 1915C6890.02 1898.43 6876.59 1885 6860.02 1885H6595C6578.43 1885 6565 1898.43 6565 1915V2440C6565 2456.57 6551.57 2470 6535 2470H6400C6383.43 2470 6370 2456.57 6370 2440V1460C6370 1443.43 6383.43 1430 6400 1430H6535Z"
+          fill="#404040" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M5080 1690C5300.36 1690 5479 1864.61 5479 2080C5479 2200.02 5479 2320.05 5479 2440.07C5479 2456.64 5465.57 2470.07 5449 2470.07H5314C5297.43 2470.07 5284 2456.64 5284 2440.07C5284 2429.06 5272.01 2422.12 5262.17 2427.07C5207.56 2454.51 5145.63 2470 5080 2470C4859.64 2470 4681 2295.39 4681 2080C4681 1864.61 4859.64 1690 5080 1690ZM5080 1885C4972.3 1885 4885 1972.3 4885 2080C4885 2187.7 4972.3 2275 5080 2275C5187.7 2275 5275 2187.7 5275 2080C5275 1972.3 5187.7 1885 5080 1885Z"
+          fill="#404040" />
+        <path
+          d="M957.085 1874.16C950.363 1900.49 946.112 1928.04 946.111 1956.4C946.112 2141.05 1105.53 2291.25 1289.44 2291.25H1458.36C1463.73 2291.3 1468.18 2291.26 1471.59 2291.25C1615.25 2291.25 1758.91 2291.3 1902.58 2291.32C1929.44 2291.32 1951.45 2312.09 1953.46 2338.46C1953.55 2339.75 1953.61 2341.06 1953.61 2342.38V2808.51C1953.6 2836.71 1930.76 2860 1902.57 2860C1792.72 2860 1130.83 2860 1074.59 2860C891.11 2856.24 733 2707.24 733 2520.58C733 2487.25 745.733 2427.22 767.1 2375.25L957.085 1874.16Z"
+          fill="#FFBE40" />
+        <path
+          d="M1470.9 2291.25C1435.17 2291.25 1415.4 2260 1428.12 2226.57L1859.17 1087.73C1869.2 1061.37 1853.01 1040 1824.83 1040H1324.73C1296.55 1040 1265.02 1061.77 1254.99 1088.13L957.085 1874.16C950.359 1900.49 946.112 1928.03 946.111 1956.4C946.112 2141.05 1104.85 2291.25 1288.75 2291.25C1349.47 2291.25 1410.19 2291.45 1470.9 2291.25Z"
+          fill="url(#paint0_footer)" />
+        <path
+          d="M2895.91 2025.84C2902.64 1999.51 2906.21 1971.96 2906.21 1943.6C2906.21 1758.95 2747.47 1608.75 2563.56 1608.75H2394.64C2389.27 1608.7 2384.82 1608.74 2381.41 1608.75C2237.75 1608.75 2094.09 1608.7 1950.42 1608.68C1923.56 1608.68 1901.55 1587.91 1899.54 1561.54C1899.45 1560.25 1899.39 1558.94 1899.39 1557.62V1091.49C1899.4 1063.29 1922.24 1040 1950.43 1040C2060.28 1040 2722.17 1040 2778.41 1040C2961.89 1043.76 3120 1192.76 3120 1379.42C3120 1412.75 3107.27 1472.78 3085.9 1524.75L2895.91 2025.84Z"
+          fill="#FFBE40" />
+        <path
+          d="M2395.33 1608.75C2389.95 1608.7 2385.5 1608.74 2382.1 1608.75C2417.83 1608.75 2437.6 1640 2424.88 1673.43L1993.83 2812.27C1983.8 2838.63 1999.99 2860 2028.17 2860H2528.27C2556.45 2860 2587.98 2838.23 2598.01 2811.87L2895.91 2025.84C2902.64 1999.5 2906.21 1972.16 2906.21 1943.78C2906.21 1759.13 2748.15 1608.75 2564.25 1608.75H2395.33Z"
+          fill="url(#paint1_footer)" />
+        <defs>
+          <linearGradient id="paint0_footer" x1="1924.5" y1="1540.88" x2="1996.64" y2="2382.31"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFBE40" />
+            <stop offset="1" stop-color="#FB8E30" />
+          </linearGradient>
+          <linearGradient id="paint1_footer" x1="2510.72" y1="2359.12" x2="2372.49" y2="1534.68"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFBE40" />
+            <stop offset="1" stop-color="#FB8E30" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="text-sm text-safe-black font-medium mb-2">
+      服務電話：02-23681888 &nbsp;|&nbsp; 服務信箱：official@flashtele.com
+    </div>
+    <p class="text-xs text-safe-black/50">© 2026 閃電通。保留所有權利。</p>
+  </footer>
+
+  <div class="h-[10px] w-full gradient-mango-horizontal"></div>
+
+
+  <script>
+    // TOC active highlight on scroll
+    const sections = document.querySelectorAll('.policy-section[id]');
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.toc-link[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    sections.forEach(s => observer.observe(s));
+  </script>
+
+</body>
+
+</html>

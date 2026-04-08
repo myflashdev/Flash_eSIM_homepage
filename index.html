@@ -158,6 +158,7 @@
       transition: all 0.15s ease;
       flex-shrink: 0;
     }
+
     input[type="checkbox"].accent-mango-orange:checked {
       background: #fb8e30;
       border-color: #fb8e30;
@@ -273,10 +274,23 @@
     }
 
     /* ── 共用 ── */
-    .icon-sm { font-size: 12px; color: #fb8e30; }
-    .icon-md { font-size: 18px; }
-    .icon-xl { font-size: 3.5rem; }
-    .flag-img { width: auto; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+    .icon-sm {
+      font-size: 12px;
+      color: #fb8e30;
+    }
+
+    .icon-md {
+      font-size: 18px;
+    }
+
+    .icon-xl {
+      font-size: 3.5rem;
+    }
+
+    .flag-img {
+      width: auto;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    }
 
     /* ── Swiper ── */
     .useCasesSwiper {
@@ -621,146 +635,148 @@
   <div id="checkout-page" class="hidden fixed inset-0 z-[55] bg-gray-50 overflow-y-auto" style="top:72px">
     <div class="flex flex-col min-h-full">
 
-    <div class="h-[10px] w-full gradient-mango-horizontal"></div>
+      <div class="h-[10px] w-full gradient-mango-horizontal"></div>
 
-    <!-- 標題列 -->
-    <div class="max-w-4xl mx-auto px-4 py-5 w-full">
-      <div class="flex items-center gap-3">
-        <button onclick="closeCheckout()" class="flex items-center gap-1.5 text-sm text-secondary-text font-medium">
-          <i class="iconoir-arrow-left" style="font-size:16px"></i>
-          <span>返回</span>
-        </button>
-        <span class="text-gray-300">|</span>
-        <h1 class="text-lg font-bold text-primary-text">安心結帳</h1>
-      </div>
-    </div>
-
-    <div class="max-w-4xl mx-auto px-4 pb-10 w-full flex-1">
-      <div class="md:grid md:grid-cols-2 md:gap-6 space-y-4 md:space-y-0">
-
-        <!-- 左欄：商品 + 電子發票 -->
-        <div class="space-y-4">
-
-          <!-- 商品摘要 -->
-          <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-            <button onclick="toggleSection('co-product')"
-              class="w-full flex items-center justify-between px-5 py-4 font-semibold text-primary-text">
-              <span>商品</span>
-              <i id="co-product-icon" class="iconoir-nav-arrow-up text-gray-400 icon-md"></i>
-            </button>
-            <div id="co-product" class="px-5 pb-5 flex items-start gap-4">
-              <img id="co-flag" src="" alt="" class="h-10 rounded mt-0.5 flag-img">
-              <div>
-                <p class="font-bold text-primary-text" id="co-name">—</p>
-                <p class="text-sm text-secondary-text mt-0.5" id="co-detail">—</p>
-                <div class="flex items-center gap-2 mt-1">
-                  <span class="font-bold text-mango-orange" id="co-price">NT$0</span>
-                  <span class="text-xs text-gray-400 line-through" id="co-original-price"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 電子發票 -->
-          <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-            <button onclick="toggleSection('co-invoice')" class="w-full flex items-center justify-between px-5 py-4">
-              <div class="flex items-center gap-3">
-                <div class="w-9 h-9 bg-gray-100 rounded-xl flex items-center justify-center">
-                  <i class="iconoir-book-stack" style="font-size:18px;color:#595959"></i>
-                </div>
-                <div class="text-left">
-                  <p class="font-semibold text-primary-text text-sm">新增電子發票</p>
-                  <p class="text-xs text-secondary-text" id="co-invoice-summary">/ 個人發票</p>
-                </div>
-              </div>
-              <i id="co-invoice-icon" class="iconoir-nav-arrow-right text-gray-400 icon-md"></i>
-            </button>
-            <div id="co-invoice" class="hidden px-5 pb-5 space-y-3">
-              <div>
-                <label class="text-sm font-medium text-primary-text block mb-1.5">載具條碼 <span
-                    class="text-gray-400 font-normal">(選填)</span></label>
-                <input id="co-carrier" type="text" placeholder="/XXXXXXX"
-                  class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-2 focus:border-[#fb8e30] transition-colors uppercase"
-                  oninput="validateField('co-carrier')" onblur="validateField('co-carrier')" />
-                <p id="co-carrier-err" class="hidden text-xs text-red-500 mt-1">格式應為 /XXXXXXX（/ 開頭共 8 碼）</p>
-              </div>
-              <div>
-                <label class="text-sm font-medium text-primary-text block mb-1.5">統一編號 <span
-                    class="text-gray-400 font-normal">(選填)</span></label>
-                <input id="co-tax-id" type="text" placeholder="12345678" maxlength="8"
-                  class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-2 focus:border-[#fb8e30] transition-colors"
-                  oninput="validateField('co-tax-id')" onblur="validateField('co-tax-id')" />
-                <p id="co-tax-id-err" class="hidden text-xs text-red-500 mt-1">請輸入 8 位數字</p>
-              </div>
-            </div>
-          </div>
-
-
-
+      <!-- 標題列 -->
+      <div class="max-w-4xl mx-auto px-4 py-5 w-full">
+        <div class="flex items-center gap-3">
+          <button onclick="closeCheckout()" class="flex items-center gap-1.5 text-sm text-secondary-text font-medium">
+            <i class="iconoir-arrow-left" style="font-size:16px"></i>
+            <span>返回</span>
+          </button>
+          <span class="text-gray-300">|</span>
+          <h1 class="text-lg font-bold text-primary-text">安心結帳</h1>
         </div>
+      </div>
 
-        <!-- 右欄：訂購人資料 + 條款 + 購買 -->
-        <div class="space-y-4">
+      <div class="max-w-4xl mx-auto px-4 pb-10 w-full flex-1">
+        <div class="md:grid md:grid-cols-2 md:gap-6 space-y-4 md:space-y-0">
 
-          <!-- 訂購人資料 -->
-          <div class="bg-white rounded-2xl border border-gray-100 shadow-sm px-5 py-5">
-            <h2 class="font-bold text-primary-text mb-1">訂購人資料</h2>
-            <p class="text-xs text-secondary-text mb-4">收據將發送到此 Email 地址。請確保提供的 Email 正確。</p>
-            <div class="space-y-4">
-              <div>
-                <label class="text-sm font-medium text-primary-text block mb-1.5">Email</label>
-                <div class="relative">
-                  <input id="co-buyer-email" type="email" placeholder="example@gmail.com"
-                    class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-2 focus:border-[#fb8e30] transition-colors pr-20"
-                    oninput="validateField('co-buyer-email')" onblur="validateField('co-buyer-email')" />
-                  <span id="co-email-verified"
-                    class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-xs text-green-500 font-semibold flex items-center gap-1">
-                    <i class="iconoir-check" style="font-size:13px"></i> 已驗證
-                  </span>
-                </div>
-                <p id="co-buyer-email-err" class="hidden text-xs text-red-500 mt-1">請輸入正確的 Email 格式</p>
-              </div>
-              <div>
-                <label class="text-sm font-medium text-primary-text block mb-1.5">手機號碼 <span
-                    class="text-gray-400 font-normal">(選填)</span></label>
-                <input id="co-buyer-phone" type="tel" placeholder="0912-345-678"
-                  class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-2 focus:border-[#fb8e30] transition-colors"
-                  oninput="validateField('co-buyer-phone')" onblur="validateField('co-buyer-phone')" />
-                <p id="co-buyer-phone-err" class="hidden text-xs text-red-500 mt-1">請輸入正確的台灣手機格式（09xxxxxxxx）</p>
-              </div>
-              <label class="flex items-center gap-3 cursor-pointer">
-                <input id="co-marketing" type="checkbox" checked class="w-4 h-4 accent-mango-orange rounded" />
-                <span class="text-sm text-secondary-text">我想要收到促銷 Email</span>
-              </label>
-            </div>
-          </div>
+          <!-- 左欄：商品 + 電子發票 -->
+          <div class="space-y-4">
 
-          <!-- 同意條款 + 購買 -->
-          <div class="bg-white rounded-2xl border border-gray-100 shadow-sm px-5 py-5 space-y-4">
-            <label class="flex items-start gap-3 cursor-pointer">
-              <input id="co-agree" type="checkbox" class="w-4 h-4 mt-0.5 accent-mango-orange rounded" />
-              <span class="text-sm text-secondary-text">
-                進行付款，即表示同意
-                <a href="#" onclick="openModal('modal-refund');return false;" class="underline text-primary-text">退款政策</a>和
-                <a href="#" onclick="openModal('modal-terms');return false;" class="underline text-primary-text">條款與條件</a>
-              </span>
-            </label>
-            <div class="flex items-center justify-between pt-1">
-              <div>
-                <p class="text-xs text-secondary-text">總付款金額</p>
-                <p class="text-2xl font-bold text-gradient-mango" id="co-total-price">NT$0</p>
-              </div>
-              <button disabled
-                class="bg-[#FDD2AC] text-white font-bold px-10 py-3.5 rounded-full text-base cursor-not-allowed">
-                即將上市
+            <!-- 商品摘要 -->
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+              <button onclick="toggleSection('co-product')"
+                class="w-full flex items-center justify-between px-5 py-4 font-semibold text-primary-text">
+                <span>商品</span>
+                <i id="co-product-icon" class="iconoir-nav-arrow-up text-gray-400 icon-md"></i>
               </button>
+              <div id="co-product" class="px-5 pb-5 flex items-start gap-4">
+                <img id="co-flag" src="" alt="" class="h-10 rounded mt-0.5 flag-img">
+                <div>
+                  <p class="font-bold text-primary-text" id="co-name">—</p>
+                  <p class="text-sm text-secondary-text mt-0.5" id="co-detail">—</p>
+                  <div class="flex items-center gap-2 mt-1">
+                    <span class="font-bold text-mango-orange" id="co-price">NT$0</span>
+                    <span class="text-xs text-gray-400 line-through" id="co-original-price"></span>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <!-- 電子發票 -->
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+              <button onclick="toggleSection('co-invoice')" class="w-full flex items-center justify-between px-5 py-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 bg-gray-100 rounded-xl flex items-center justify-center">
+                    <i class="iconoir-book-stack" style="font-size:18px;color:#595959"></i>
+                  </div>
+                  <div class="text-left">
+                    <p class="font-semibold text-primary-text text-sm">新增電子發票</p>
+                    <p class="text-xs text-secondary-text" id="co-invoice-summary">/ 個人發票</p>
+                  </div>
+                </div>
+                <i id="co-invoice-icon" class="iconoir-nav-arrow-right text-gray-400 icon-md"></i>
+              </button>
+              <div id="co-invoice" class="hidden px-5 pb-5 space-y-3">
+                <div>
+                  <label class="text-sm font-medium text-primary-text block mb-1.5">載具條碼 <span
+                      class="text-gray-400 font-normal">(選填)</span></label>
+                  <input id="co-carrier" type="text" placeholder="/XXXXXXX"
+                    class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-2 focus:border-[#fb8e30] transition-colors uppercase"
+                    oninput="validateField('co-carrier')" onblur="validateField('co-carrier')" />
+                  <p id="co-carrier-err" class="hidden text-xs text-red-500 mt-1">格式應為 /XXXXXXX（/ 開頭共 8 碼）</p>
+                </div>
+                <div>
+                  <label class="text-sm font-medium text-primary-text block mb-1.5">統一編號 <span
+                      class="text-gray-400 font-normal">(選填)</span></label>
+                  <input id="co-tax-id" type="text" placeholder="12345678" maxlength="8"
+                    class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-2 focus:border-[#fb8e30] transition-colors"
+                    oninput="validateField('co-tax-id')" onblur="validateField('co-tax-id')" />
+                  <p id="co-tax-id-err" class="hidden text-xs text-red-500 mt-1">請輸入 8 位數字</p>
+                </div>
+              </div>
+            </div>
+
+
+
           </div>
 
+          <!-- 右欄：訂購人資料 + 條款 + 購買 -->
+          <div class="space-y-4">
+
+            <!-- 訂購人資料 -->
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm px-5 py-5">
+              <h2 class="font-bold text-primary-text mb-1">訂購人資料</h2>
+              <p class="text-xs text-secondary-text mb-4">收據將發送到此 Email 地址。請確保提供的 Email 正確。</p>
+              <div class="space-y-4">
+                <div>
+                  <label class="text-sm font-medium text-primary-text block mb-1.5">Email</label>
+                  <div class="relative">
+                    <input id="co-buyer-email" type="email" placeholder="example@gmail.com"
+                      class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-2 focus:border-[#fb8e30] transition-colors pr-20"
+                      oninput="validateField('co-buyer-email')" onblur="validateField('co-buyer-email')" />
+                    <span id="co-email-verified"
+                      class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-xs text-green-500 font-semibold flex items-center gap-1">
+                      <i class="iconoir-check" style="font-size:13px"></i> 已驗證
+                    </span>
+                  </div>
+                  <p id="co-buyer-email-err" class="hidden text-xs text-red-500 mt-1">請輸入正確的 Email 格式</p>
+                </div>
+                <div>
+                  <label class="text-sm font-medium text-primary-text block mb-1.5">手機號碼 <span
+                      class="text-gray-400 font-normal">(選填)</span></label>
+                  <input id="co-buyer-phone" type="tel" placeholder="0912-345-678"
+                    class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-2 focus:border-[#fb8e30] transition-colors"
+                    oninput="validateField('co-buyer-phone')" onblur="validateField('co-buyer-phone')" />
+                  <p id="co-buyer-phone-err" class="hidden text-xs text-red-500 mt-1">請輸入正確的台灣手機格式（09xxxxxxxx）</p>
+                </div>
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input id="co-marketing" type="checkbox" checked class="w-4 h-4 accent-mango-orange rounded" />
+                  <span class="text-sm text-secondary-text">我想要收到促銷 Email</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- 同意條款 + 購買 -->
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm px-5 py-5 space-y-4">
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input id="co-agree" type="checkbox" class="w-4 h-4 mt-0.5 accent-mango-orange rounded" />
+                <span class="text-sm text-secondary-text">
+                  進行付款，即表示同意
+                  <a href="#" onclick="openModal('modal-refund');return false;"
+                    class="underline text-primary-text">退款政策</a>和
+                  <a href="#" onclick="openModal('modal-terms');return false;"
+                    class="underline text-primary-text">條款與條件</a>
+                </span>
+              </label>
+              <div class="flex items-center justify-between pt-1">
+                <div>
+                  <p class="text-xs text-secondary-text">總付款金額</p>
+                  <p class="text-2xl font-bold text-gradient-mango" id="co-total-price">NT$0</p>
+                </div>
+                <button disabled
+                  class="bg-[#FDD2AC] text-white font-bold px-10 py-3.5 rounded-full text-base cursor-not-allowed">
+                  即將上市
+                </button>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
-    </div>
-    <div class="h-[10px] w-full gradient-mango-horizontal"></div>
+      <div class="h-[10px] w-full gradient-mango-horizontal"></div>
     </div>
   </div>
 
@@ -775,7 +791,8 @@
       </div>
 
       <!-- 匯款資訊 -->
-      <div onclick="copyRemittanceInfo()" class="w-full bg-white rounded-2xl border border-gray-100 shadow-sm px-5 py-4 space-y-3 cursor-pointer active:bg-gray-50 transition-colors">
+      <div onclick="copyRemittanceInfo()"
+        class="w-full bg-white rounded-2xl border border-gray-100 shadow-sm px-5 py-4 space-y-3 cursor-pointer active:bg-gray-50 transition-colors">
         <div class="flex items-center justify-between">
           <p class="text-xs font-semibold text-secondary-text">匯款資訊</p>
           <span id="copy-btn-text" class="text-xs text-mango-orange flex items-center gap-1">
@@ -797,7 +814,9 @@
           </div>
         </div>
         <hr class="border-gray-100">
-        <p class="text-xs text-secondary-text">請將已匯款通知寄至：<a href="mailto:official@flashtele.com" class="font-medium text-primary-text underline" onclick="event.stopPropagation()">official@flashtele.com</a> 並附上訂單資訊</p>
+        <p class="text-xs text-secondary-text">請將已匯款通知寄至：<a href="mailto:official@flashtele.com"
+            class="font-medium text-primary-text underline" onclick="event.stopPropagation()">official@flashtele.com</a>
+          並附上訂單資訊</p>
       </div>
 
       <!-- 注意事項 -->
@@ -805,19 +824,26 @@
         <p class="text-xs font-semibold text-secondary-text">注意事項</p>
         <div class="space-y-2.5">
           <div class="flex gap-2.5 text-sm">
-            <span class="w-5 h-5 rounded-full gradient-mango text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
-            <p class="text-secondary-text">請於 <span class="font-semibold text-primary-text">24 小時內</span>完成匯款，逾時訂單將自動取消。</p>
+            <span
+              class="w-5 h-5 rounded-full gradient-mango text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+            <p class="text-secondary-text">請於 <span class="font-semibold text-primary-text">24 小時內</span>完成匯款，逾時訂單將自動取消。
+            </p>
           </div>
           <div class="flex gap-2.5 text-sm">
-            <span class="w-5 h-5 rounded-full gradient-mango text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
-            <p class="text-secondary-text">匯款完成後，請將<span class="font-semibold text-primary-text">帳號末 5 碼</span>回覆至 <span class="font-medium text-primary-text">official@flashtele.com</span> <span class="font-semibold text-primary-text">並附上訂單資訊</span>。</p>
+            <span
+              class="w-5 h-5 rounded-full gradient-mango text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+            <p class="text-secondary-text">匯款完成後，請將<span class="font-semibold text-primary-text">帳號末 5 碼</span>回覆至 <span
+                class="font-medium text-primary-text">official@flashtele.com</span> <span
+                class="font-semibold text-primary-text">並附上訂單資訊</span>。</p>
           </div>
           <div class="flex gap-2.5 text-sm">
-            <span class="w-5 h-5 rounded-full gradient-mango text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+            <span
+              class="w-5 h-5 rounded-full gradient-mango text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
             <p class="text-secondary-text">系統核對金額後，將自動寄送 eSIM QR Code 至您的信箱。</p>
           </div>
           <div class="flex gap-2.5 text-sm">
-            <span class="w-5 h-5 rounded-full gradient-mango text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
+            <span
+              class="w-5 h-5 rounded-full gradient-mango text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
             <p class="text-secondary-text">訂單狀態將由「已成立」更新為「已完成」，您可憑確認信查詢。</p>
           </div>
         </div>
@@ -875,7 +901,8 @@
   <!-- ── 彈窗：退款政策 ── -->
   <div id="modal-refund" class="hidden fixed inset-0 z-[80] flex items-end sm:items-center justify-center px-0 sm:px-4">
     <div class="absolute inset-0 bg-black/50" onclick="closeModal('modal-refund')"></div>
-    <div class="relative bg-white w-full sm:max-w-lg rounded-t-3xl sm:rounded-2xl shadow-2xl max-h-[85vh] flex flex-col">
+    <div
+      class="relative bg-white w-full sm:max-w-lg rounded-t-3xl sm:rounded-2xl shadow-2xl max-h-[85vh] flex flex-col">
       <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
         <h2 class="font-bold text-primary-text text-base">退款政策</h2>
         <button onclick="closeModal('modal-refund')" class="text-gray-400 hover:text-gray-600">
@@ -891,7 +918,8 @@
 
         <div>
           <p class="font-semibold text-primary-text mb-1">二、猶豫期適用說明</p>
-          <p>依據《消費者保護法》第 19 條及《通訊交易解除權合理例外情事適用準則》第 2 條第 5 款規定，本商品屬「一經提供即為完成之線上服務」，<span class="font-medium text-primary-text">於消費者啟用（掃描 QR Code 安裝）後，不適用 7 日猶豫期退貨規定。</span></p>
+          <p>依據《消費者保護法》第 19 條及《通訊交易解除權合理例外情事適用準則》第 2 條第 5 款規定，本商品屬「一經提供即為完成之線上服務」，<span
+              class="font-medium text-primary-text">於消費者啟用（掃描 QR Code 安裝）後，不適用 7 日猶豫期退貨規定。</span></p>
         </div>
 
         <div>
@@ -927,7 +955,8 @@
   <!-- ── 彈窗：條款與條件 ── -->
   <div id="modal-terms" class="hidden fixed inset-0 z-[80] flex items-end sm:items-center justify-center px-0 sm:px-4">
     <div class="absolute inset-0 bg-black/50" onclick="closeModal('modal-terms')"></div>
-    <div class="relative bg-white w-full sm:max-w-lg rounded-t-3xl sm:rounded-2xl shadow-2xl max-h-[85vh] flex flex-col">
+    <div
+      class="relative bg-white w-full sm:max-w-lg rounded-t-3xl sm:rounded-2xl shadow-2xl max-h-[85vh] flex flex-col">
       <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
         <h2 class="font-bold text-primary-text text-base">條款與條件</h2>
         <button onclick="closeModal('modal-terms')" class="text-gray-400 hover:text-gray-600">
@@ -980,7 +1009,7 @@
         <p id="bar-plan-detail" class="truncate mt-0.5">—</p>
         <p class="text-2xl font-bold text-gradient-mango leading-tight" id="bar-price">NT$0</p>
       </div>
-      
+
       <button disabled
         class="bg-[#FDD2AC] text-white font-bold px-8 py-3.5 rounded-full text-base whitespace-nowrap cursor-not-allowed">
         即將上市
@@ -1386,10 +1415,10 @@
     }
 
     const FIELD_RULES = {
-      'co-buyer-email': { required: true,  test: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+      'co-buyer-email': { required: true, test: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
       'co-buyer-phone': { required: false, test: v => /^09\d{8}$/.test(v.replace(/[-\s]/g, '')) },
-      'co-carrier':     { required: false, test: v => /^\/[A-Z0-9]{7}$/i.test(v) },
-      'co-tax-id':      { required: false, test: v => /^\d{8}$/.test(v) },
+      'co-carrier': { required: false, test: v => /^\/[A-Z0-9]{7}$/i.test(v) },
+      'co-tax-id': { required: false, test: v => /^\d{8}$/.test(v) },
     };
 
     function validateField(id) {
@@ -1435,7 +1464,7 @@
       document.getElementById('confirm-total').textContent = document.getElementById('co-total-price').textContent;
 
       // 產生假訂單編號
-      const orderId = '#' + new Date().toISOString().slice(0,10).replace(/-/g,'') + '-' + Math.random().toString(36).slice(2,5).toUpperCase();
+      const orderId = '#' + new Date().toISOString().slice(0, 10).replace(/-/g, '') + '-' + Math.random().toString(36).slice(2, 5).toUpperCase();
       document.getElementById('confirm-order-id').textContent = orderId;
 
       // 切換頁面
@@ -1444,11 +1473,11 @@
     }
 
     function copyRemittanceInfo() {
-      const orderId  = document.getElementById('confirm-order-id').textContent;
-      const total    = document.getElementById('confirm-total').textContent;
-      const email    = document.getElementById('co-buyer-email').value.trim();
-      const name     = document.getElementById('confirm-name').textContent;
-      const detail   = document.getElementById('confirm-detail').textContent;
+      const orderId = document.getElementById('confirm-order-id').textContent;
+      const total = document.getElementById('confirm-total').textContent;
+      const email = document.getElementById('co-buyer-email').value.trim();
+      const name = document.getElementById('confirm-name').textContent;
+      const detail = document.getElementById('confirm-detail').textContent;
 
       const text = [
         '【已匯款通知】',
@@ -1560,6 +1589,9 @@
     </div>
     <div class="text-sm text-safe-black font-medium mb-2">
       服務電話：02-23681888 &nbsp;|&nbsp; 服務信箱：official@flashtele.com
+    </div>
+    <div class="text-xs text-safe-black/50 mb-2">
+      <a href="tw/policy/" class="hover:text-safe-black transition-colors">隱私權與服務條款</a>
     </div>
     <p class="text-xs text-safe-black/50">© 2026 閃電通。保留所有權利。</p>
   </footer>
